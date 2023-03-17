@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SafeGear</string>
+    <string name="registrar_vehiculo"></string>
+    <string name="marca"></string>
+    <string name="name"></string>
+
 </resources>

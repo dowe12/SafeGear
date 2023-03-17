@@ -19,7 +19,7 @@
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/safegearlogo" />
+            app:srcCompat="@drawable/logo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,6 +70,8 @@
             android:padding="15dp"
             android:textSize="15sp" />
 
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -86,16 +88,20 @@
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="@color/btn_color"
+            android:backgroundTint="#F88A19"
             android:fontFamily="@font/roboto_regular"
-            android:text="Iniciar Sesion" />
+            android:text="Iniciar Sesion"
+            android:theme="@style/BotonTheme"
+            android:onClick="onClick"/>
 
         <TextView
+            android:id="@+id/tv_registrar_usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:text="¿No tienes cuenta?" />
+            android:text="¿No tienes cuenta?"
+            android:onClick="onClick"/>
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

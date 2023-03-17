@@ -5,30 +5,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 
-class Login : AppCompatActivity() {
+class RegistroUsuario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_registro_usuario)
 
-        val tvGoRegistrarUsuario = findViewById<TextView>(R.id.tv_registrar_usuario)
-        tvGoRegistrarUsuario.setOnClickListener{
-            goRegistarUsuario()
-        }
-
-        val btnGoHomeUsuario = findViewById<TextView>(R.id.btn_login_iniciar_sesion)
+        val btnGoHomeUsuario = findViewById<TextView>(R.id.btn_registrar_usuario)
         btnGoHomeUsuario.setOnClickListener{
             goHomeUsuario()
         }
 
-    }
+        val btnGologin = findViewById<TextView>(R.id.btn_cancelar_usuario)
+        btnGologin.setOnClickListener{
+            goUsuarioLogin()
+        }
 
-    private fun goRegistarUsuario(){
-        val i= Intent(this,RegistroUsuario::class.java)
-        startActivity(i)
     }
 
     private fun goHomeUsuario(){
         val i= Intent(this,HomeUsuario::class.java)
+        startActivity(i)
+    }
+
+    private fun goUsuarioLogin(){
+        val i= Intent(this,Login::class.java)
         startActivity(i)
     }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="BotonTheme" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/btn_color</item>
+        <item name="colorControlHighlight">@color/color_gris</item>
+    </style>
+
+</resources>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistroUsuario">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="110dp"
+        android:isScrollContainer="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Registrar Usuario"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_marginTop="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_light_italic"
+            android:text="nos encanta que quieras ser parte de safegear llena el formulario y disfruta de los  beneficios."
+            android:textSize="18sp"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/edt_registrar_nombres"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/edittext_custom"
+            android:fontFamily="@font/roboto_light_italic"
+            android:hint="Nombres"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edt_registrar_apellidos"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/edittext_custom"
+            android:fontFamily="@font/roboto_light_italic"
+            android:hint="Apellidos"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edt_registrar_identificacion"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/edittext_custom"
+            android:fontFamily="@font/roboto_light_italic"
+            android:hint="Numero de identificacion"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edt_registrar_telefono"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/edittext_custom"
+            android:fontFamily="@font/roboto_light_italic"
+            android:hint="Numero de telefono"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edt_registrar_correo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/edittext_custom"
+            android:fontFamily="@font/roboto_light_italic"
+            android:hint="Correo Electronico"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edt_registrar_contraseña"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/edittext_custom"
+            android:fontFamily="@font/roboto_light_italic"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edt_confirmar_contraseña"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/edittext_custom"
+            android:fontFamily="@font/roboto_light_italic"
+            android:hint="Confirmar Contraseña"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="25dp">
+
+            <Button
+                android:id="@+id/btn_registrar_usuario"
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#F88A19"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Registrar"
+                android:theme="@style/BotonTheme"
+                android:onClick="onClick"/>
+            <Button
+                android:id="@+id/btn_cancelar_usuario"
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#F88A19"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Cancelar"
+                android:theme="@style/BotonTheme"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView >
