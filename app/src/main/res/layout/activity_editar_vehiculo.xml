@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditarVehiculo">
+
+    <TextView
+        android:id="@+id/tv_titulo_EditarVehiculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Editar Vehículo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_placa_EditarVehiculo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="87dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_EditarVehiculo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_placa_EditarVehiculo">
+
+        <TextView
+            android:id="@+id/tv_marca_EditarVehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="14dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Marca"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_modelo_EditarVehiculo"
+            app:layout_constraintEnd_toStartOf="@+id/edt_MarcaVehiculo_EditarVehiculo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_modelo_EditarVehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="38dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Modelo"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/spn_TipoVehiculo_EditarVehiculo"
+            app:layout_constraintEnd_toStartOf="@+id/edt_ModeloVehiculo_EditarVehiculo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_marca_EditarVehiculo" />
+
+        <Spinner
+            android:id="@+id/spn_TipoVehiculo_EditarVehiculo"
+            android:layout_width="280sp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="32dp"
+            android:entries="@array/TipoVehiculo"
+            android:spinnerMode="dialog"
+            app:layout_constraintBottom_toTopOf="@+id/btn_editarSOAT_EditarVehiculo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.37"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_ModeloVehiculo_EditarVehiculo" />
+
+        <TextView
+            android:id="@+id/tv_soat_EditarVehiculos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="80dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="SOAT"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_tecno_EditarVehiculo"
+            app:layout_constraintEnd_toStartOf="@+id/btn_editarSOAT_EditarVehiculo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spn_TipoVehiculo_EditarVehiculo" />
+
+        <TextView
+            android:id="@+id/tv_tecno_EditarVehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Tecnomecánica"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_editarTECNO_EditarVehiculo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_soat_EditarVehiculos" />
+
+        <EditText
+            android:id="@+id/edt_MarcaVehiculo_EditarVehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/edittext_custom"
+            android:ems="10"
+            android:hint="Ingresa la marca"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_marca_EditarVehiculo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edt_ModeloVehiculo_EditarVehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/edittext_custom"
+            android:ems="10"
+            android:hint="Ingresa el modelo"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/spn_TipoVehiculo_EditarVehiculo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_modelo_EditarVehiculo"
+            app:layout_constraintTop_toBottomOf="@+id/edt_MarcaVehiculo_EditarVehiculo" />
+
+        <Button
+            android:id="@+id/btn_editarSOAT_EditarVehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="27dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/btn_color"
+            android:text="editar"
+            app:layout_constraintBottom_toTopOf="@+id/btn_editarTECNO_EditarVehiculo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_soat_EditarVehiculos"
+            app:layout_constraintTop_toBottomOf="@+id/spn_TipoVehiculo_EditarVehiculo" />
+
+        <Button
+            android:id="@+id/btn_editarTECNO_EditarVehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="27dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/btn_color"
+            android:text="editar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_tecno_EditarVehiculo"
+            app:layout_constraintTop_toBottomOf="@+id/btn_editarSOAT_EditarVehiculo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_placa_EditarVehiculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="157dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="32dp"
+        android:text="aqui va la placa"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_EditarVehiculo" />
+
+    <Button
+        android:id="@+id/btn_EditarVehiculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="50dp"
+        android:text="Subir cambios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
