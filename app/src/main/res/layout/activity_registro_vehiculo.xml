@@ -1,175 +1,304 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    tools:context=".RegistroVehiculo">
+    tools:context=".RegistroVehiculo"
+    android:stretchColumns="1">
+
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="89dp"
-        android:layout_height="41dp"
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/roboto_bold"
+        android:text="Registrar Vehiculo"
+        android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.077"
-        tools:text="modelo" />
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="96dp"
-        android:layout_height="54dp"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_vehiculo"
-        app:layout_constraintVertical_bias="0.107"
-        tools:text="Soat" />
+        android:textSize="27sp"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="95dp"
+        tools:text="Registrar Vehiculo" />
+    <TableRow>
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="187dp"
-        android:layout_height="40dp"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.232"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.121"
-        tools:text="Tecnomecanica" />
+        <TextView
+            android:layout_width="wrap_content"
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="261dp"
-        android:layout_height="53dp"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Registrar vehiculo" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Placa"
+            android:textColor="#000000"
+            android:textSize="23sp"
+            tools:text="Placa" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="89dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.003"
-        tools:text="marca" />
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:padding="3dip"
+            android:layout_width="158dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="35dp"
+            android:autofillHints=""
+            android:background="@drawable/input_bordes"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#8F8F8F"
+            tools:text="Placa" />
+    </TableRow>
+    <TableRow>
 
-    <EditText
+        <TextView
+            android:layout_width="wrap_content"
 
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="227dp"
-        android:layout_height="48dp"
-        android:autofillHints=""
-        android:background="@drawable/input_bordes"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:paddingStart="10dp"
-        android:textColor="#8F8F8F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.245"
-        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck"
-        tools:text="marca" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/marca"
+            android:textColor="#000000"
+            android:textSize="23sp"
+            tools:text="Marca" />
 
-    <EditText
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:padding="3dip"
+            android:layout_width="158dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="35dp"
+            android:autofillHints=""
+            android:background="@drawable/input_bordes"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#8F8F8F"
+            tools:text="marca" />
+    </TableRow>
 
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="227dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:autofillHints=""
-        android:background="@drawable/input_bordes"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:paddingStart="10dp"
-        android:textColor="#8F8F8F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        app:layout_constraintVertical_bias="0.006"
-        tools:ignore="TextContrastCheck"
-        tools:text="modelo" />
+    <TableRow>
 
-    <Spinner
-        android:id="@+id/spinner_vehiculo"
-        android:layout_width="92dp"
-        android:layout_height="48dp"
-        android:contentDescription="@string/name"
-        android:dropDownWidth="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.061" />
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Modelo"
+            android:textColor="#000000"
+            android:textSize="23sp"
+            tools:text="Modelo" />
+
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:padding="3dip"
+            android:layout_width="158dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="35dp"
+            android:autofillHints=""
+            android:background="@drawable/input_bordes"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#8F8F8F"
+            tools:text="Modelo" />
+    </TableRow>
+
+    <TableRow>
+        <Spinner
+            android:id="@+id/spinner_vehiculo"
+            android:layout_width="126dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="30dp"
+            android:contentDescription="@string/name"
+            android:dropDownWidth="wrap_content"
+            android:entries="@array/TipoVehiculo"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="254dp" />
+
+    </TableRow>
+
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Color"
+            android:textColor="#000000"
+            android:textSize="23sp"
+            tools:text="Color" />
+
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:padding="3dip"
+            android:layout_width="158dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="35dp"
+            android:autofillHints=""
+            android:background="@drawable/input_bordes"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#8F8F8F"
+            tools:text="Color" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Combustible"
+            android:textColor="#000000"
+            android:textSize="23sp"
+            tools:text="Combustible" />
+
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:padding="3dip"
+            android:layout_width="158dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="35dp"
+            android:autofillHints=""
+            android:background="@drawable/input_bordes"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#8F8F8F"
+            tools:text="Combustible" />
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Cilindraje"
+            android:textColor="#000000"
+            android:textSize="23sp"
+            tools:text="Cilindraje" />
+
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:padding="3dip"
+            android:layout_width="158dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="35dp"
+            android:autofillHints=""
+            android:background="@drawable/input_bordes"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#8F8F8F"
+            tools:text="Cilindraje" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Combustible"
+            android:textColor="#000000"
+            android:textSize="23sp"
+            tools:text="Combustible" />
+
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:padding="3dip"
+            android:layout_width="158dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="35dp"
+            android:autofillHints=""
+            android:background="@drawable/input_bordes"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#8F8F8F"
+            tools:text="Combustible" />
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Soat"
+            android:textColor="#000000"
+            android:textSize="23sp"
+            tools:text="Soat" />
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/btn_color2"
+            android:text="editar"
+            tools:layout_editor_absoluteX="283dp"
+            tools:layout_editor_absoluteY="513dp" />
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Tecnomecanica"
+            android:textColor="#000000"
+            android:textSize="23sp"
+            tools:text="Tecnomecanica" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/btn_color2"
+            android:text="editar"
+            tools:layout_editor_absoluteX="283dp"
+            tools:layout_editor_absoluteY="513dp" />
+
+    </TableRow>
 
     <Button
-        android:layout_width="103dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@color/btn_color"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
         android:backgroundTint="@color/btn_color2"
         android:text="editar"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.795"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-        app:layout_constraintVertical_bias="0.849" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="106dp"
-        android:layout_height="48dp"
-        android:backgroundTint="@color/btn_color2"
-        android:text="editar"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.786"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-        app:layout_constraintVertical_bias="0.46" />
-
-    <Button
-        android:layout_width="124dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="109dp"
-        android:background="@drawable/rounded_button"
-        android:text="registrar"
-        android:textColor="#4E342E"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.142" />
+        tools:layout_editor_absoluteX="283dp"
+        tools:layout_editor_absoluteY="513dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</TableLayout>
