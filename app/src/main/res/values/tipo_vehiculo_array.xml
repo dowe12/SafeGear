@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="TipoVehiculo">
+        <item>Motos</item>
+        <item>Autos familiares</item>
+        <item>Camperos y camionetas</item>
+        <item>Carga o mixto</item>
+        <item>Oficiales especiales</item>
+        <item>Servicio Publico</item>
+    </string-array>
+</resources>
