@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">SafeGear</string>
-    <string name="registrar_vehiculo">Registrar Vehiculo</string>
-    <string name="marca">Marca</string>
     <string name="name">Name</string>
-    <string name="editar">editar</string>
+    <string name="url_base">http://192.168.0.2:8050/UNIVERSIDAD/backend-bancolo-app/public/api/</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroUsuario">
+    tools:context=".PerfilUsuario">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/roboto_regular"
-            android:text="Registrar Usuario"
+            android:text="Perfil Usuario"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25sp"
@@ -32,11 +32,11 @@
             android:layout_marginTop="8dp"
             android:layout_marginRight="25dp"
             android:fontFamily="@font/roboto_light_italic"
-            android:text="nos encanta que quieras ser parte de safegear llena el formulario y disfruta de los  beneficios."
+            android:text="estos son los datos que tenemos de ti."
             android:textSize="18sp"
             android:textAlignment="center"/>
 
-        <EditText
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -49,7 +49,7 @@
             android:padding="15dp"
             android:textSize="15sp" />
 
-        <EditText
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -137,7 +137,6 @@
             android:layout_marginBottom="25dp">
 
             <Button
-                android:id="@+id/btn_registrar_usuario"
                 android:layout_width="145dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -145,11 +144,10 @@
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="#F88A19"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Registrar"
+                android:text="Editar"
                 android:theme="@style/BotonTheme"
                 android:onClick="onClick"/>
             <Button
-                android:id="@+id/btn_cancelar_usuario"
                 android:layout_width="145dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
