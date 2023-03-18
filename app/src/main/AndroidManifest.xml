@@ -31,14 +31,14 @@
             android:name=".EditarVehiculo"
             android:exported="false" />
         <activity
-            android:name=".RegistroVehiculo"
+            android:name=".Login"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Login"
+            android:name=".RegistroVehiculo"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
