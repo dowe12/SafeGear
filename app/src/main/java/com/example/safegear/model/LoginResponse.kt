@@ -1,5 +1,6 @@
 package com.example.safegear.model
 
+
 import com.google.gson.annotations.SerializedName
 
 data class LoginResponse(
