@@ -24,9 +24,14 @@ class Login : AppCompatActivity() {
         setContentView(binding.root)
         binding.btnLoginIniciarSesion.setOnClickListener {
             var correo = binding.edtLoginCorreo.text.toString()
-            var contrasenia = binding.edtLoginCorreo.text.toString()
+            var contrasenia = binding.edtLoginContrasenia.text.toString()
             val user = UserResponse(correo, contrasenia)
             postSignIn(user)
+        }
+
+        binding.tvRegistrarUsuario.setOnClickListener {
+            val intent = Intent(this, RegistroUsuario::class.java)
+            startActivity(intent)
         }
     }
 
@@ -74,7 +79,7 @@ class Login : AppCompatActivity() {
     }
 
     private fun showMainMenu() {
-        val intent = Intent(this, Login::class.java)
+        val intent = Intent(this, HomeUsuario::class.java)
         startActivity(intent)
         finish()
     }

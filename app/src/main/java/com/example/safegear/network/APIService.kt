@@ -1,6 +1,7 @@
 package com.example.safegear.network
 
 import com.example.safegear.model.LoginResponse
+import com.example.safegear.model.UserBodyRegister
 import com.example.safegear.model.UserResponse
 import retrofit2.Response
 import retrofit2.http.Body
@@ -10,5 +11,8 @@ interface APIService {
 
     @POST("login")
     suspend fun signIn(@Body user: UserResponse): Response<LoginResponse>
+
+    @POST("register")
+    suspend fun register(@Body user: UserBodyRegister): Response<LoginResponse>
 
 }

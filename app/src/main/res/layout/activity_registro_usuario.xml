@@ -37,6 +37,7 @@
             android:textAlignment="center"/>
 
         <EditText
+            android:id="@+id/et_nombre_register"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -50,45 +51,7 @@
             android:textSize="15sp" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/edittext_custom"
-            android:fontFamily="@font/roboto_light_italic"
-            android:hint="Apellidos"
-            android:inputType="text"
-            android:padding="15dp"
-            android:textSize="15sp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/edittext_custom"
-            android:fontFamily="@font/roboto_light_italic"
-            android:hint="Numero de identificacion"
-            android:inputType="text"
-            android:padding="15dp"
-            android:textSize="15sp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/edittext_custom"
-            android:fontFamily="@font/roboto_light_italic"
-            android:hint="Numero de telefono"
-            android:inputType="text"
-            android:padding="15dp"
-            android:textSize="15sp" />
-
-        <EditText
+            android:id="@+id/et_correo_register"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -102,6 +65,7 @@
             android:textSize="15sp" />
 
         <EditText
+            android:id="@+id/et_contrasenia_register"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -115,6 +79,7 @@
             android:textSize="15sp" />
 
         <EditText
+            android:id="@+id/et_conf_contrasenia_register"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"

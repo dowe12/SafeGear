@@ -3,26 +3,80 @@ package com.example.safegear
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import android.util.Log
+import android.widget.Toast
+import com.example.safegear.databinding.ActivityRegistroUsuarioBinding
+import com.example.safegear.model.SharedApp
+import com.example.safegear.model.UserBodyRegister
+import com.example.safegear.network.APIService
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class RegistroUsuario : AppCompatActivity() {
+    lateinit var binding:ActivityRegistroUsuarioBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registro_usuario)
+        binding = ActivityRegistroUsuarioBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val btnGoHomeUsuario = findViewById<TextView>(R.id.btn_registrar_usuario)
-        btnGoHomeUsuario.setOnClickListener{
+        binding.btnRegistrarUsuario.setOnClickListener{
             goHomeUsuario()
         }
 
-        val btnGologin = findViewById<TextView>(R.id.btn_cancelar_usuario)
-        btnGologin.setOnClickListener{
+        binding.btnCancelarUsuario.setOnClickListener{
             goUsuarioLogin()
         }
 
     }
 
     private fun goHomeUsuario(){
+        val name                = binding.etNombreRegister.text.toString()
+        val email               = binding.etCorreoRegister.text.toString()
+        val password            = binding.etContraseniaRegister.text.toString()
+        val passwordConfirmated = binding.etConfContraseniaRegister.text.toString()
+
+        if (name.isEmpty() || email.isEmpty() || password.isEmpty() || passwordConfirmated.isEmpty()){
+            return showDialog("Por favor ingrese todos los campos!")
+        }
+        if (password.trim() == passwordConfirmated.trim()){
+            CoroutineScope(Dispatchers.IO).launch {
+                val user = UserBodyRegister(name, email, password)
+                val call =
+                    getRetrofit().create(APIService::class.java).register(user)
+                val dataUser = call.body()
+                runOnUiThread {
+                    when (dataUser?.status) {
+                        "success" -> {
+                            SharedApp.prefs.id              = dataUser.id_user.toString()
+                            SharedApp.prefs.name            = dataUser.nombre.toString()
+                            SharedApp.prefs.lastname        = dataUser.apellido.toString()
+                            SharedApp.prefs.identification  = dataUser.identificacion.toString()
+                            SharedApp.prefs.jwt             = dataUser.jwt.toString()
+                            Log.d("API funciona", "" + dataUser.id_user)
+                            showMainMenu()
+                        }
+                        "invalid" -> {
+                            showErrorDialog(dataUser.message.toString())
+                        }
+                        else -> {
+                            Log.e("API", "" + call)
+                            showErrorDialog("")
+                        }
+                    }
+                }
+            }
+        } else if (password.trim() != passwordConfirmated.trim())
+        {
+            showErrorDialog("Las contraseñas no coinciden!")
+        }
+
+    }
+
+
+    private fun showMainMenu(){
         val i= Intent(this,HomeUsuario::class.java)
         startActivity(i)
     }
@@ -30,5 +84,20 @@ class RegistroUsuario : AppCompatActivity() {
     private fun goUsuarioLogin(){
         val i= Intent(this,Login::class.java)
         startActivity(i)
+    }
+
+    private fun showDialog(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showErrorDialog(msg: String) {
+        Toast.makeText(this, "Ha ocurrido un error "+msg, Toast.LENGTH_SHORT).show()
+    }
+
+    fun getRetrofit(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(getString(R.string.url_base))
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
 }

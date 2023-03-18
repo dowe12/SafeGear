@@ -2,17 +2,17 @@ package com.example.safegear
 
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import com.example.safegear.databinding.ActivityRegistroVehiculoBinding
 
 
 class RegistroVehiculo : AppCompatActivity() {
 
-
+    lateinit var binding: ActivityRegistroVehiculoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registro_vehiculo)
+        binding = ActivityRegistroVehiculoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
 

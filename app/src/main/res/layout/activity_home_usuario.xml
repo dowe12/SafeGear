@@ -46,6 +46,7 @@
         tools:layout_editor_absoluteY="110dp">
 
         <Button
+            android:id="@+id/btn_perfil_home_u"
             android:layout_width="150dp"
             android:layout_height="90dp"
             android:layout_gravity="center"
@@ -56,6 +57,7 @@
             android:text="Perfil Usuario" />
 
         <Button
+            android:id="@+id/btn_vehiculos_home_u"
             android:layout_width="150dp"
             android:layout_height="90dp"
             android:layout_gravity="center"
@@ -66,6 +68,7 @@
             android:text="vehiculos" />
 
         <Button
+            android:id="@+id/btn_logout_home_u"
             android:layout_width="150dp"
             android:layout_height="90dp"
             android:layout_gravity="center"

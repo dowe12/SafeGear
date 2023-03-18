@@ -56,7 +56,7 @@
             android:textSize="15sp" />
 
         <EditText
-            android:id="@+id/edt_login_contraseña"
+            android:id="@+id/edt_login_contrasenia"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -98,8 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:text="¿No tienes cuenta?"
-            android:onClick="onClick"/>
+            android:text="¿No tienes cuenta?"/>
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
