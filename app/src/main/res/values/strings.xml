@@ -2,5 +2,5 @@
     <string name="app_name">SafeGear</string>
     <string name="name">Name</string>
     <string name="marca">marca</string>
-    <string name="url_base">http://192.168.0.2:8050/UNIVERSIDAD/backend-bancolo-app/public/api/</string>
+    <string name="url_base">http://192.168.20.21/BackendSafeGear/public/api/</string>
 </resources>

@@ -52,8 +52,11 @@ class Login : AppCompatActivity() {
             val data_user = call.body()
             runOnUiThread {
                 if (data_user?.status == "success") {
-                    SharedApp.prefs.id = data_user.id_user.toString()
-                    SharedApp.prefs.name = data_user.name.toString()
+                    SharedApp.prefs.id              = data_user.id_user.toString()
+                    SharedApp.prefs.name            = data_user.nombre.toString()
+                    SharedApp.prefs.lastname        = data_user.apellido.toString()
+                    SharedApp.prefs.identification  = data_user.identificacion.toString()
+                    SharedApp.prefs.jwt             = data_user.jwt.toString()
                     Log.d("API funciona", "" + data_user.id_user)
                     showMainMenu()
                 } else if (data_user?.status == "invalid") {
