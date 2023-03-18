@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SafeGear"
         tools:targetApi="31">
         <activity
+            android:name=".HomeVehiculo"
+            android:exported="false" />
+        <activity
             android:name=".EditarTECNO"
             android:exported="false" />
         <activity

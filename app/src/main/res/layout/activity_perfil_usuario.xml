@@ -42,7 +42,6 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="25dp"
-            android:background="@drawable/edittext_custom"
             android:fontFamily="@font/roboto_light_italic"
             android:hint="Nombres"
             android:inputType="text"
@@ -55,77 +54,12 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="25dp"
-            android:background="@drawable/edittext_custom"
             android:fontFamily="@font/roboto_light_italic"
             android:hint="Apellidos"
             android:inputType="text"
             android:padding="15dp"
             android:textSize="15sp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/edittext_custom"
-            android:fontFamily="@font/roboto_light_italic"
-            android:hint="Numero de identificacion"
-            android:inputType="text"
-            android:padding="15dp"
-            android:textSize="15sp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/edittext_custom"
-            android:fontFamily="@font/roboto_light_italic"
-            android:hint="Numero de telefono"
-            android:inputType="text"
-            android:padding="15dp"
-            android:textSize="15sp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/edittext_custom"
-            android:fontFamily="@font/roboto_light_italic"
-            android:hint="Correo Electronico"
-            android:inputType="textEmailAddress"
-            android:padding="15dp"
-            android:textSize="15sp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/edittext_custom"
-            android:fontFamily="@font/roboto_light_italic"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:padding="15dp"
-            android:textSize="15sp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/edittext_custom"
-            android:fontFamily="@font/roboto_light_italic"
-            android:hint="Confirmar Contraseña"
-            android:inputType="textPassword"
-            android:padding="15dp"
-            android:textSize="15sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -136,6 +70,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginBottom="25dp">
 
+
             <Button
                 android:layout_width="145dp"
                 android:layout_height="wrap_content"
@@ -144,18 +79,7 @@
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="#F88A19"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Editar"
-                android:theme="@style/BotonTheme"
-                android:onClick="onClick"/>
-            <Button
-                android:layout_width="145dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/rounded_button"
-                android:backgroundTint="#F88A19"
-                android:fontFamily="@font/roboto_regular"
-                android:text="Cancelar"
+                android:text="volver"
                 android:theme="@style/BotonTheme"
                 android:onClick="onClick"/>
         </LinearLayout>
