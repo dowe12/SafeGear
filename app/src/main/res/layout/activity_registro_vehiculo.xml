@@ -15,26 +15,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
-
-
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Registrar Vehiculo"
+                android:text="Registrar Vehículo"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="27sp"
                 tools:layout_editor_absoluteX="28dp"
                 tools:layout_editor_absoluteY="95dp"
-                tools:text="Registrar Vehiculo" />
+                />
             <TableRow>
 
                 <TextView
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="20dp"
@@ -63,12 +60,11 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="marca"
+                    android:text="Marca"
                     android:textColor="#000000"
                     android:textSize="23sp"
                     />
@@ -80,14 +76,13 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
-
                     android:autofillHints=""
                     android:background="@drawable/input_bordes"
                     android:ems="10"
                     android:inputType="text"
                     android:padding="3dip"
                     android:textColor="#8F8F8F"
-                    tools:text="marca" />
+                    tools:text="Marca" />
             </TableRow>
 
             <TableRow>
@@ -111,7 +106,6 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
-
                     android:autofillHints=""
                     android:background="@drawable/input_bordes"
                     android:ems="10"
@@ -124,15 +118,13 @@
             <TableRow>
                 <TextView
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Combustible"
                     android:textColor="#000000"
                     android:textSize="22sp"
-                    tools:text="Tipo de vehiculo" />
+                    android:text="Tipo de vehículo" />
                 <Spinner
                     android:id="@+id/spinner_vehiculo"
                     android:layout_width="126dp"
@@ -153,7 +145,6 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="20dp"
@@ -170,7 +161,6 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
-
                     android:autofillHints=""
                     android:background="@drawable/input_bordes"
                     android:ems="10"
@@ -184,7 +174,6 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="20dp"
@@ -211,7 +200,6 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="20dp"
@@ -243,7 +231,6 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="20dp"
@@ -270,7 +257,6 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:fontFamily="@font/roboto_bold"
