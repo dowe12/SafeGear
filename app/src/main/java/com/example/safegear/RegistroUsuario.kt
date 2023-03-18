@@ -50,13 +50,15 @@ class RegistroUsuario : AppCompatActivity() {
                 runOnUiThread {
                     when (dataUser?.status) {
                         "success" -> {
+                            val rol = dataUser.rol_id.toString()
                             SharedApp.prefs.id              = dataUser.id_user.toString()
+                            SharedApp.prefs.rolId           = rol
                             SharedApp.prefs.name            = dataUser.nombre.toString()
                             SharedApp.prefs.lastname        = dataUser.apellido.toString()
                             SharedApp.prefs.identification  = dataUser.identificacion.toString()
                             SharedApp.prefs.jwt             = dataUser.jwt.toString()
                             Log.d("API funciona", "" + dataUser.id_user)
-                            showMainMenu()
+                            showMainMenu(rol)
                         }
                         "invalid" -> {
                             showErrorDialog(dataUser.message.toString())
@@ -75,10 +77,22 @@ class RegistroUsuario : AppCompatActivity() {
 
     }
 
-
-    private fun showMainMenu(){
-        val i= Intent(this,HomeUsuario::class.java)
-        startActivity(i)
+    private fun showMainMenu(rol: String){
+        when(rol){
+            "1" -> {
+                val i = Intent(this, HomeUsuario::class.java)
+                startActivity(i)
+                finish()
+            }
+            "2" -> {
+                val i = Intent(this, HomeMecanico::class.java)
+                startActivity(i)
+                finish()
+            }
+            else -> {
+                showErrorDialog(":(")
+            }
+        }
     }
 
     private fun goUsuarioLogin(){

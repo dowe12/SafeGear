@@ -37,8 +37,6 @@ class Login : AppCompatActivity() {
 
     private fun postSignIn(user: UserResponse) {
 
-        // esto son codigos sencillos para provar la navegacion del login
-
         val tvGoRegistrarUsuario = findViewById<TextView>(R.id.tv_registrar_usuario)
         tvGoRegistrarUsuario.setOnClickListener{
             goRegistarUsuario()
@@ -49,23 +47,23 @@ class Login : AppCompatActivity() {
             goHomeUsuario()
         }
 
-        //termina aqui
-
         CoroutineScope(Dispatchers.IO).launch {
             val call =
                 getRetrofit().create(APIService::class.java).signIn(user)
-            val data_user = call.body()
+            val dataUser = call.body()
             runOnUiThread {
-                if (data_user?.status == "success") {
-                    SharedApp.prefs.id              = data_user.id_user.toString()
-                    SharedApp.prefs.name            = data_user.nombre.toString()
-                    SharedApp.prefs.lastname        = data_user.apellido.toString()
-                    SharedApp.prefs.identification  = data_user.identificacion.toString()
-                    SharedApp.prefs.jwt             = data_user.jwt.toString()
-                    Log.d("API funciona", "" + data_user.id_user)
-                    showMainMenu()
-                } else if (data_user?.status == "invalid") {
-                    showErrorDialog(data_user.message.toString())
+                if (dataUser?.status == "success") {
+                    val rol = dataUser.rol_id.toString()
+                    SharedApp.prefs.id              = dataUser.id_user.toString()
+                    SharedApp.prefs.rolId           = rol
+                    SharedApp.prefs.name            = dataUser.nombre.toString()
+                    SharedApp.prefs.lastname        = dataUser.apellido.toString()
+                    SharedApp.prefs.identification  = dataUser.identificacion.toString()
+                    SharedApp.prefs.jwt             = dataUser.jwt.toString()
+                    Log.d("API funciona", "" + dataUser.id_user)
+                    showMainMenu(rol)
+                } else if (dataUser?.status == "invalid") {
+                    showErrorDialog(dataUser.message.toString())
                 } else {
                     Log.e("API", "" + call)
                     showErrorDialog("")
@@ -78,10 +76,22 @@ class Login : AppCompatActivity() {
         Toast.makeText(this, "Ha ocurrido un error "+msg, Toast.LENGTH_SHORT).show()
     }
 
-    private fun showMainMenu() {
-        val intent = Intent(this, HomeUsuario::class.java)
-        startActivity(intent)
-        finish()
+    private fun showMainMenu(rol: String){
+        when(rol){
+            "1" -> {
+                val i = Intent(this, HomeUsuario::class.java)
+                startActivity(i)
+                finish()
+            }
+            "2" -> {
+                val i = Intent(this, HomeMecanico::class.java)
+                startActivity(i)
+                finish()
+            }
+            else -> {
+                showErrorDialog(":(")
+            }
+        }
     }
 
     fun getRetrofit():Retrofit{

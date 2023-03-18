@@ -9,17 +9,19 @@ class Prefs (context: Context) {
     val PREFS_IDENTIFICATION = "1061123456"
     val PREFS_JWT = "TokenJwt"
     val PREFS_ID = "123"
+    val PREFS_ROL_ID = "1"
     val SHARED_NAME = "shared_name"
     val SHARED_LASTNAME = "shared_lastname"
     val SHARED_IDENTIFICATION = "shared_identification"
-    val SHARED_ID = "shared_name"
-    val SHARED_JWT = "shared_name"
+    val SHARED_ID = "shared_id"
+    val SHARED_JWT = "shared_jwt"
+    val SHARED_ROL_ID = "shared_rol"
     val prefsName: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
     val prefsLastName: SharedPreferences = context.getSharedPreferences(PREFS_LASTNAME, 0)
     val prefsIdentification: SharedPreferences = context.getSharedPreferences(PREFS_IDENTIFICATION, 0)
     val prefsJwt: SharedPreferences = context.getSharedPreferences(PREFS_JWT, 0)
-
     val prefsIdUser: SharedPreferences = context.getSharedPreferences(PREFS_ID, 0)
+    val prefsRolId: SharedPreferences = context.getSharedPreferences(PREFS_ROL_ID, 0)
 
     var id: String
         get() = prefsIdUser.getString(SHARED_ID, "").toString()
@@ -40,5 +42,9 @@ class Prefs (context: Context) {
     var jwt: String
         get() = prefsJwt.getString(SHARED_JWT, "").toString()
         set(value) = prefsJwt.edit().putString(SHARED_JWT, value).apply()
+
+    var rolId: String
+        get() = prefsRolId.getString(SHARED_ROL_ID, "").toString()
+        set(value) = prefsRolId.edit().putString(SHARED_ROL_ID, value).apply()
 
 }
