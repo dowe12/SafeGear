@@ -9,13 +9,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import android.os.Bundle
 
-/*class EditarSOAT : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_editar_soat)
-    }
-}*/
-
 class EditarSOAT(): DialogFragment() {
 
     private lateinit var binding : ActivityEditarSoatBinding

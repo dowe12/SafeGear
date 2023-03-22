@@ -15,5 +15,10 @@ class EditarVehiculo : AppCompatActivity() {
             EditarSOAT(
             ).show(supportFragmentManager, "dialog")
         }
+
+        binding.btnEditarTECNOEditarVehiculo.setOnClickListener {
+            EditarTECNO(
+            ).show(supportFragmentManager, "dialog")
+        }
     }
 }
