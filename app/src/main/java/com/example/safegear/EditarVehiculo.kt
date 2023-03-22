@@ -1,11 +1,19 @@
 package com.example.safegear
 
 import androidx.appcompat.app.AppCompatActivity
+import com.example.safegear.databinding.ActivityEditarVehiculoBinding
 import android.os.Bundle
 
 class EditarVehiculo : AppCompatActivity() {
+    lateinit var binding: ActivityEditarVehiculoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_editar_vehiculo)
+        binding = ActivityEditarVehiculoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnEditarSOATEditarVehiculo.setOnClickListener {
+            EditarSOAT(
+            ).show(supportFragmentManager, "dialog")
+        }
     }
 }
