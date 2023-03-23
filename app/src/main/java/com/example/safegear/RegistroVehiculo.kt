@@ -25,8 +25,6 @@ class RegistroVehiculo : AppCompatActivity() {
         val bundle = intent.extras
         val fecha = bundle?.getString("fechainicio_RegSOAT")
 
-        Toast.makeText(this,fecha, Toast.LENGTH_SHORT).show()
-
         binding.btnRegistrarVehiculo.setOnClickListener {
             registerVehicle()
         }
@@ -37,8 +35,9 @@ class RegistroVehiculo : AppCompatActivity() {
         }
 
         binding.btnRegistrarTecnomecanica.setOnClickListener {
-            RegistrarTECNO(
-            ).show(supportFragmentManager, "dialog")
+            /*RegistrarTECNO(
+            ).show(supportFragmentManager, "dialog")*/
+            Toast.makeText(this, fecha, Toast.LENGTH_SHORT).show()
         }
 
     }
