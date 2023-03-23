@@ -88,7 +88,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
-            android:hint="Ingresa la marca"
+            android:hint=" Ingresa la marca"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -103,7 +103,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
-            android:hint="Ingresa el modelo"
+            android:hint=" Ingresa el modelo"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/spn_TipoVehiculo_EditarVehiculo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -150,9 +150,9 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
-            android:hint="Ingresa el color"
+            android:hint=" Ingresa el color"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/edt_combustible_EditarVehiculo"
+            app:layout_constraintBottom_toTopOf="@+id/spn_combustible_EditarVehiculo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_color_EditarVehiculo"
             app:layout_constraintTop_toBottomOf="@+id/spn_TipoVehiculo_EditarVehiculo" />
@@ -165,11 +165,11 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
-            android:hint="Ingresa el cilindraje"
-            android:inputType="textPersonName"
+            android:hint=" Ingresa el cilindraje"
+            android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_cilindraje_EditarVehiculo"
-            app:layout_constraintTop_toBottomOf="@+id/edt_combustible_EditarVehiculo" />
+            app:layout_constraintTop_toBottomOf="@+id/spn_combustible_EditarVehiculo" />
 
         <TextView
             android:id="@+id/tv_combustible_EditarVehiculo"
@@ -184,20 +184,19 @@
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/tv_cilindraje_EditarVehiculo"
-            app:layout_constraintEnd_toStartOf="@+id/edt_combustible_EditarVehiculo"
+            app:layout_constraintEnd_toStartOf="@+id/spn_combustible_EditarVehiculo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_color_EditarVehiculo" />
 
-        <EditText
-            android:id="@+id/edt_combustible_EditarVehiculo"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spn_combustible_EditarVehiculo"
+            android:layout_width="195dp"
             android:layout_height="48dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="12dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
-            android:hint="Cant. combustible"
-            android:inputType="number"
+            android:entries="@array/TipoCombustible"
             app:layout_constraintBottom_toTopOf="@+id/edt_cilindraje_EditarVehiculo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_combustible_EditarVehiculo"
