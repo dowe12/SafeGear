@@ -15,6 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import com.example.safegear.model.UserResponse
 import com.example.safegear.model.SharedApp
 import com.example.safegear.network.APIService
+import com.example.safegear.ui.mechanic.HomeMechanicActivity
 
 class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -84,7 +85,7 @@ class Login : AppCompatActivity() {
                 finish()
             }
             "2" -> {
-                val i = Intent(this, HomeMecanico::class.java)
+                val i = Intent(this, HomeMechanicActivity::class.java)
                 startActivity(i)
                 finish()
             }

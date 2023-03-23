@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mechanic.HomeMechanicActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Home Mecánico"
+            android:textColor="@color/black"
+            android:textSize="35sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_light_italic"
+            android:text="Como mecánico cuentas con las siguientes opciones"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_perfil_home_m"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/btn_color"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Perfil mecánico" />
+
+        <Button
+            android:id="@+id/btn_perfil_aprobacion_home_m"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/btn_color"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Solictar aprobación SafeGear" />
+
+        <Button
+            android:id="@+id/btn_gestionar_vehiculo_home_m"
+            android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/btn_color"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Gestionar\nmantenimiento" />
+
+        <Button
+            android:id="@+id/btn_logout_home_m"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/btn_color"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Cerrar Sesion" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

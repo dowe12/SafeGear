@@ -9,6 +9,7 @@ import com.example.safegear.databinding.ActivityRegistroUsuarioBinding
 import com.example.safegear.model.SharedApp
 import com.example.safegear.model.UserBodyRegister
 import com.example.safegear.network.APIService
+import com.example.safegear.ui.mechanic.HomeMechanicActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -85,7 +86,7 @@ class RegistroUsuario : AppCompatActivity() {
                 finish()
             }
             "2" -> {
-                val i = Intent(this, HomeMecanico::class.java)
+                val i = Intent(this, HomeMechanicActivity::class.java)
                 startActivity(i)
                 finish()
             }
