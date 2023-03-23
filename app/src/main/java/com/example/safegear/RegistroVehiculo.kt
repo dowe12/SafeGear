@@ -22,6 +22,11 @@ class RegistroVehiculo : AppCompatActivity() {
         binding = ActivityRegistroVehiculoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val bundle = intent.extras
+        val fecha = bundle?.getString("fechainicio_RegSOAT")
+
+        Toast.makeText(this,fecha, Toast.LENGTH_SHORT).show()
+
         binding.btnRegistrarVehiculo.setOnClickListener {
             registerVehicle()
         }

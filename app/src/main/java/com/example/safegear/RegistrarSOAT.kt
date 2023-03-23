@@ -3,6 +3,7 @@ package com.example.safegear
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -53,6 +54,9 @@ class RegistrarSOAT(): DialogFragment() {
         }
 
         binding.btnRegistrarSOAT.setOnClickListener {
+            val intent1 = Intent(binding.root.context, RegistroVehiculo::class.java)
+            intent1.putExtra("fechainicio_RegSOAT", binding.edtFechaInicioRegistrarSOAT.toString())
+            startActivity(intent1)
         }
 
         return dialog
