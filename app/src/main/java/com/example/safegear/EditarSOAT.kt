@@ -2,6 +2,7 @@ package com.example.safegear
 
 import android.app.DatePickerDialog
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import com.example.safegear.databinding.ActivityEditarSoatBinding
@@ -26,32 +27,34 @@ class EditarSOAT(): DialogFragment() {
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
         val dialog = builder.create()
-        val inicio_editarsoat = binding.edtFechaInicioEditarSOAT
-        val fin_editarsoat = binding.edtFechaFinEditarSOAT
+        val inicioEditarSOAT = binding.edtFechaInicioEditarSOAT
+        val finEditarSOAT = binding.edtFechaFinEditarSOAT
 
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        val datePickerDialog_inicio = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
-            // Aquí se hace lo que quiera con la fecha seleccionada amista
-            val selectedDate_inicio = " $dayOfMonth/${month + 1}/$year"
-            val edtSOATinit = binding.edtFechaInicioEditarSOAT.setText(selectedDate_inicio)
+        val datePickerDialogINICIO = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            val selectedDateINI = " $dayOfMonth/${month + 1}/$year"
+            binding.edtFechaInicioEditarSOAT.setText(selectedDateINI)
         }, year, month, day)
 
-        val datePickerDialog_fin = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
-            // Aquí se hace lo que quiera con la fecha seleccionada amista
-            val selectedDate_fin = " $dayOfMonth/${month + 1}/$year"
-            val edtSOATfin = binding.edtFechaFinEditarSOAT.setText(selectedDate_fin)
+        val datePickerDialogFIN = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            val selectedDateFIN = " $dayOfMonth/${month + 1}/$year"
+            binding.edtFechaFinEditarSOAT.setText(selectedDateFIN)
         }, year, month, day)
 
-        inicio_editarsoat.setOnClickListener {
-            datePickerDialog_inicio.show()
+        inicioEditarSOAT.setOnClickListener {
+            datePickerDialogINICIO.show()
         }
 
-        fin_editarsoat.setOnClickListener {
-            datePickerDialog_fin.show()
+        finEditarSOAT.setOnClickListener {
+            datePickerDialogFIN.show()
         }
 
         binding.btnEditarSOAT.setOnClickListener {
+            val intent = Intent(binding.root.context, EditarVehiculo::class.java)
+            intent.putExtra("fechainicio_EdtSOAT", binding.edtFechaInicioEditarSOAT.text.toString())
+            intent.putExtra("fechafin_EdtSOAT", binding.edtFechaFinEditarSOAT.text.toString())
+            startActivity(intent)
         }
 
         return dialog

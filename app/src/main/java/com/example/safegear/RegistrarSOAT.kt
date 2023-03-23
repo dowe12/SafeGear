@@ -2,13 +2,11 @@ package com.example.safegear
 
 import android.app.DatePickerDialog
 import android.app.Dialog
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.example.safegear.databinding.ActivityRegistrarSoatBinding
@@ -28,35 +26,34 @@ class RegistrarSOAT(): DialogFragment() {
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
         val dialog = builder.create()
-        val inicio_registrarsoat = binding.edtFechaInicioRegistrarSOAT
-        val fin_registrarsoat = binding.edtFechaFinRegistrarSOAT
+        val inicioRegistrarSOAT = binding.edtFechaInicioRegistrarSOAT
+        val finRegistrarSOAT = binding.edtFechaFinRegistrarSOAT
 
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        val datePickerDialog_inicio = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
-            // Aquí se hace lo que quiera con la fecha seleccionada amista
-            val selectedDate_inicio = " $dayOfMonth/${month + 1}/$year"
-            val edtRegSOATinit = binding.edtFechaInicioRegistrarSOAT.setText(selectedDate_inicio)
+        val datePickerDialogINICIO = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            val selectedDateINI = "$dayOfMonth/${month + 1}/$year"
+            binding.edtFechaInicioRegistrarSOAT.setText(selectedDateINI)
         }, year, month, day)
 
-        val datePickerDialog_fin = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
-            // Aquí se hace lo que quiera con la fecha seleccionada amista
-            val selectedDate_fin = " $dayOfMonth/${month + 1}/$year"
-            val edtRegSOATfin = binding.edtFechaFinRegistrarSOAT.setText(selectedDate_fin)
+        val datePickerDialogFIN = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            val selectedDateFIN = "$dayOfMonth/${month + 1}/$year"
+            binding.edtFechaFinRegistrarSOAT.setText(selectedDateFIN)
         }, year, month, day)
 
-        inicio_registrarsoat.setOnClickListener {
-            datePickerDialog_inicio.show()
+        inicioRegistrarSOAT.setOnClickListener {
+            datePickerDialogINICIO.show()
         }
 
-        fin_registrarsoat.setOnClickListener {
-            datePickerDialog_fin.show()
+        finRegistrarSOAT.setOnClickListener {
+            datePickerDialogFIN.show()
         }
 
         binding.btnRegistrarSOAT.setOnClickListener {
-            val intent1 = Intent(binding.root.context, RegistroVehiculo::class.java)
-            intent1.putExtra("fechainicio_RegSOAT", binding.edtFechaInicioRegistrarSOAT.toString())
-            startActivity(intent1)
+            val intent = Intent(binding.root.context, RegistroVehiculo::class.java)
+            intent.putExtra("fechainicio_RegSOAT", binding.edtFechaInicioRegistrarSOAT.text.toString())
+            intent.putExtra("fechafin_RegSOAT", binding.edtFechaFinRegistrarSOAT.text.toString())
+            startActivity(intent)
         }
 
         return dialog

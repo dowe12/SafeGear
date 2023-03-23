@@ -22,9 +22,6 @@ class RegistroVehiculo : AppCompatActivity() {
         binding = ActivityRegistroVehiculoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val bundle = intent.extras
-        val fecha = bundle?.getString("fechainicio_RegSOAT")
-
         binding.btnRegistrarVehiculo.setOnClickListener {
             registerVehicle()
         }
@@ -35,14 +32,14 @@ class RegistroVehiculo : AppCompatActivity() {
         }
 
         binding.btnRegistrarTecnomecanica.setOnClickListener {
-            /*RegistrarTECNO(
-            ).show(supportFragmentManager, "dialog")*/
-            Toast.makeText(this, fecha, Toast.LENGTH_SHORT).show()
+            RegistrarTECNO(
+            ).show(supportFragmentManager, "dialog")
         }
 
     }
 
     private fun registerVehicle(){
+        val bundle = intent.extras
         val user_id      = SharedApp.prefs.id
         val placa        = binding.edtRegistrarPlaca.text.toString()
         val marca        = binding.edtRegistrarMarca.text.toString()
@@ -51,10 +48,10 @@ class RegistroVehiculo : AppCompatActivity() {
         val color        = binding.edtRegistrarColor.text.toString()
         val combustible  = binding.spinnerCombustible.selectedItem.toString()
         val cilindraje   = binding.edtRegistrarCilindraje.text.toString()
-        val inicioSOAT   = "12/12/2023"
-        val finSOAT      = "12/12/2023"
-        val inicioTecno  = "12/12/2023"
-        val finTecno     = "12/12/2023"
+        val inicioSOAT   = bundle?.getString("fechainicio_RegSOAT").toString()
+        val finSOAT      = bundle?.getString("fechafin_RegSOAT").toString()
+        val inicioTecno  = bundle?.getString("fechainicio_RegTECNO").toString()
+        val finTecno     = bundle?.getString("fechafin_RegTECNO").toString()
 
         if (placa.isEmpty()       ||
             marca.isEmpty()       ||
