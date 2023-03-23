@@ -22,38 +22,40 @@ class RegistrarSOAT(): DialogFragment() {
 
         val builder = AlertDialog.Builder(requireActivity())
         builder.setView(binding.root)
-
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
-
-
-        binding.btnRegistrarSOAT.setOnClickListener {
-
-
-
-        }
-
         val dialog = builder.create()
+        val inicio_registrarsoat = binding.edtFechaInicioRegistrarSOAT
+        val fin_registrarsoat = binding.edtFechaFinRegistrarSOAT
+
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-
-        val inicio_soat = binding.tvFechaCRegistrarSOAT
-        val datePickerDialog = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+        val datePickerDialog_inicio = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
             // Aquí se hace lo que quiera con la fecha seleccionada amista
-            val selectedDate = "$dayOfMonth/${month + 1}/$year"
-            val edtSOATinit = binding.edtFechaInicioRegistrarSOAT.setText(selectedDate)
-
+            val selectedDate_inicio = " $dayOfMonth/${month + 1}/$year"
+            val edtRegSOATinit = binding.edtFechaInicioRegistrarSOAT.setText(selectedDate_inicio)
         }, year, month, day)
 
-        inicio_soat.setOnClickListener {
-            datePickerDialog.show()
+        val datePickerDialog_fin = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            // Aquí se hace lo que quiera con la fecha seleccionada amista
+            val selectedDate_fin = " $dayOfMonth/${month + 1}/$year"
+            val edtRegSOATfin = binding.edtFechaFinRegistrarSOAT.setText(selectedDate_fin)
+        }, year, month, day)
+
+        inicio_registrarsoat.setOnClickListener {
+            datePickerDialog_inicio.show()
+        }
+
+        fin_registrarsoat.setOnClickListener {
+            datePickerDialog_fin.show()
+        }
+
+        binding.btnRegistrarSOAT.setOnClickListener {
         }
 
         return dialog
-
-
     }
 }
 

@@ -20,7 +20,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="409dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="20dp"
@@ -52,6 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Fecha Compra"
                 android:textColor="#000000"
@@ -73,22 +74,25 @@
                 android:text="Fecha Vence"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/spn_aseguradoras_EditarSOAT"
+                app:layout_constraintBottom_toTopOf="@+id/btn_EditarSOAT"
                 app:layout_constraintEnd_toStartOf="@+id/edt_FechaFin_EditarSOAT"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_fechaC_EditarSOAT" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_FechaInicio_EditarSOAT"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="14dp"
-                android:background="@drawable/edittext_custom"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:cursorVisible="false"
                 android:ems="10"
+                android:focusable="false"
                 android:hint=" Fecha Inicio"
-                android:inputType="date"
+                android:inputType="none"
+                android:textColor="#000000"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/edt_FechaFin_EditarSOAT"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_fechaC_EditarSOAT"
@@ -103,26 +107,14 @@
                 android:background="@drawable/edittext_custom"
                 android:ems="10"
                 android:hint=" Fecha Fin"
-                android:inputType="date"
-                app:layout_constraintBottom_toTopOf="@+id/spn_aseguradoras_RegistrarSOAT"
+                android:inputType="none"
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:focusable="false"
+                app:layout_constraintBottom_toTopOf="@+id/btn_EditarSOAT"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_fechaV_EditarSOAT"
                 app:layout_constraintTop_toBottomOf="@+id/edt_FechaInicio_EditarSOAT" />
-
-            <Spinner
-                android:id="@+id/spn_aseguradoras_EditarSOAT"
-                android:layout_width="320dp"
-                android:layout_height="48sp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/edittext_custom"
-                android:entries="@array/Aseguradoras"
-                android:spinnerMode="dropdown"
-                app:layout_constraintBottom_toTopOf="@+id/btn_EditarSOAT"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edt_FechaFin_EditarSOAT" />
 
             <Button
                 android:id="@+id/btn_EditarSOAT"
@@ -138,7 +130,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spn_aseguradoras_EditarSOAT" />
+                app:layout_constraintTop_toBottomOf="@+id/edt_FechaFin_EditarSOAT" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 

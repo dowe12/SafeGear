@@ -1,5 +1,6 @@
 package com.example.safegear
 
+import android.app.DatePickerDialog
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -23,15 +24,39 @@ class RegistrarTECNO(): DialogFragment() {
 
         val builder = AlertDialog.Builder(requireActivity())
         builder.setView(binding.root)
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+        val dialog = builder.create()
+        val inicio_registrarsoat = binding.edtFechaInicioRegistrarTECNO
+        val fin_registrarsoat = binding.edtFechaFinRegistrarTECNO
 
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        binding.btnRegistrarTECNO.setOnClickListener {
+        val datePickerDialog_inicio = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            // Aquí se hace lo que quiera con la fecha seleccionada amista
+            val selectedDate_inicio = " $dayOfMonth/${month + 1}/$year"
+            val edtRegTECNOinit = binding.edtFechaInicioRegistrarTECNO.setText(selectedDate_inicio)
+        }, year, month, day)
 
+        val datePickerDialog_fin = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            // Aquí se hace lo que quiera con la fecha seleccionada amista
+            val selectedDate_fin = " $dayOfMonth/${month + 1}/$year"
+            val edtRegTECNOfin = binding.edtFechaFinRegistrarTECNO.setText(selectedDate_fin)
+        }, year, month, day)
 
+        inicio_registrarsoat.setOnClickListener {
+            datePickerDialog_inicio.show()
         }
 
-        val dialog = builder.create()
-        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        fin_registrarsoat.setOnClickListener {
+            datePickerDialog_fin.show()
+        }
+
+        binding.btnRegistrarTECNO.setOnClickListener {
+        }
+
         return dialog
     }
 
