@@ -31,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tv_titulo_RegistrarTECNO"
+                android:id="@+id/tv_titulo_EditarTECNO"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -46,7 +46,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_fechaC_RegistrarTECNO"
+                android:id="@+id/tv_fechaC_EditarTECNO"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -54,13 +54,13 @@
                 android:text="Fecha Compra"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/tv_fechaV_RegistrarTECNO"
-                app:layout_constraintEnd_toStartOf="@+id/edt_FechaInicio_RegistrarTECNO"
+                app:layout_constraintBottom_toTopOf="@+id/tv_fechaV_EditarTECNO"
+                app:layout_constraintEnd_toStartOf="@+id/edt_FechaInicio_EditarTECNO"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_titulo_RegistrarTECNO" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_titulo_EditarTECNO" />
 
             <TextView
-                android:id="@+id/tv_fechaV_RegistrarTECNO"
+                android:id="@+id/tv_fechaV_EditarTECNO"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -71,13 +71,13 @@
                 android:text="Fecha Vence"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/btn_RegistrarTECNO"
-                app:layout_constraintEnd_toStartOf="@+id/edt_FechaFin_RegistrarTECNO"
+                app:layout_constraintBottom_toTopOf="@+id/btn_EditarTECNO"
+                app:layout_constraintEnd_toStartOf="@+id/edt_FechaFin_EditarTECNO"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_fechaC_RegistrarTECNO" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_fechaC_EditarTECNO" />
 
             <EditText
-                android:id="@+id/edt_FechaInicio_RegistrarTECNO"
+                android:id="@+id/edt_FechaInicio_EditarTECNO"
                 android:layout_width="wrap_content"
                 android:layout_height="48sp"
                 android:layout_marginStart="14dp"
@@ -87,13 +87,13 @@
                 android:ems="10"
                 android:hint=" Fecha Inicio"
                 android:inputType="date"
-                app:layout_constraintBottom_toTopOf="@+id/edt_FechaFin_RegistrarTECNO"
+                app:layout_constraintBottom_toTopOf="@+id/edt_FechaFin_EditarTECNO"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_fechaC_RegistrarTECNO"
-                app:layout_constraintTop_toBottomOf="@+id/tv_titulo_RegistrarTECNO" />
+                app:layout_constraintStart_toEndOf="@+id/tv_fechaC_EditarTECNO"
+                app:layout_constraintTop_toBottomOf="@+id/tv_titulo_EditarTECNO" />
 
             <EditText
-                android:id="@+id/edt_FechaFin_RegistrarTECNO"
+                android:id="@+id/edt_FechaFin_EditarTECNO"
                 android:layout_width="wrap_content"
                 android:layout_height="48sp"
                 android:layout_marginTop="20dp"
@@ -102,13 +102,13 @@
                 android:ems="10"
                 android:hint=" Fecha Fin"
                 android:inputType="date"
-                app:layout_constraintBottom_toTopOf="@+id/btn_RegistrarTECNO"
+                app:layout_constraintBottom_toTopOf="@+id/btn_EditarTECNO"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_fechaV_RegistrarTECNO"
-                app:layout_constraintTop_toBottomOf="@+id/edt_FechaInicio_RegistrarTECNO" />
+                app:layout_constraintStart_toEndOf="@+id/tv_fechaV_EditarTECNO"
+                app:layout_constraintTop_toBottomOf="@+id/edt_FechaInicio_EditarTECNO" />
 
             <Button
-                android:id="@+id/btn_RegistrarTECNO"
+                android:id="@+id/btn_EditarTECNO"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
@@ -121,7 +121,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edt_FechaFin_RegistrarTECNO" />
+                app:layout_constraintTop_toBottomOf="@+id/edt_FechaFin_EditarTECNO" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
