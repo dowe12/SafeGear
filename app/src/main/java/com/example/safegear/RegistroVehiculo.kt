@@ -25,6 +25,17 @@ class RegistroVehiculo : AppCompatActivity() {
         binding.btnRegistrarVehiculo.setOnClickListener {
             registerVehicle()
         }
+
+        binding.btnRegistrarSoat.setOnClickListener {
+            RegistrarSOAT(
+            ).show(supportFragmentManager, "dialog")
+        }
+
+        binding.btnRegistrarTecnomecanica.setOnClickListener {
+            RegistrarTECNO(
+            ).show(supportFragmentManager, "dialog")
+        }
+
     }
 
     private fun registerVehicle(){

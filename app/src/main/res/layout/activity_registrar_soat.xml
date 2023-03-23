@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarSOAT">
+    tools:context=".RegistrarSOAT">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardRegisSOAT"
@@ -37,6 +37,9 @@
                 android:layout_marginStart="82dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="79dp"
+                android:clickable="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Información SOAT"
                 android:textAlignment="center"
@@ -47,7 +50,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tv_fechaC_RegistrarSOAT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -55,6 +58,10 @@
                 android:fontFamily="@font/roboto_bold"
                 android:text="Fecha Compra"
                 android:textColor="#000000"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:inputType="none"
+                android:clickable="true"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_fechaV_RegistrarSOAT"
                 app:layout_constraintEnd_toStartOf="@+id/edt_FechaInicio_RegistrarSOAT"
@@ -86,6 +93,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="14dp"
                 android:background="@drawable/edittext_custom"
+                android:clickable="true"
                 android:ems="10"
                 android:hint="Fecha Inicio"
                 android:inputType="date"
@@ -93,6 +101,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_fechaC_RegistrarSOAT"
                 app:layout_constraintTop_toBottomOf="@+id/tv_titulo_RegistrarSOAT" />
+
 
             <EditText
                 android:id="@+id/edt_FechaFin_RegistrarSOAT"
@@ -139,7 +148,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/spn_aseguradoras_RegistrarSOAT" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
