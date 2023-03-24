@@ -17,8 +17,7 @@ class RegistrarSOAT(): DialogFragment() {
     private lateinit var binding : ActivityRegistrarSoatBinding
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        binding = ActivityRegistrarSoatBinding.inflate(LayoutInflater.from(context))
-
+        binding = ActivityRegistrarSoatBinding.inflate(layoutInflater)
         val builder = AlertDialog.Builder(requireActivity())
         builder.setView(binding.root)
         val calendar = Calendar.getInstance()

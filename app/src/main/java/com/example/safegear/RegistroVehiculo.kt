@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.safegear.databinding.ActivityRegistroVehiculoBinding
 import com.example.safegear.model.SharedApp
-import com.example.safegear.model.VehiculoBodyRegister
+import com.example.safegear.model.VehiculoModel
 import com.example.safegear.network.APIService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -66,7 +66,7 @@ class RegistroVehiculo : AppCompatActivity() {
         }
 
         CoroutineScope(Dispatchers.IO).launch {
-            val vehicle = VehiculoBodyRegister(
+            val vehicle = VehiculoModel(
                         user_id,
                         tipoVehiculo,
                         combustible,

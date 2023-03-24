@@ -14,6 +14,6 @@ interface APIService {
     suspend fun register(@Body user: UserBodyRegister): Response<LoginResponse>
 
     @POST("vehiculo")
-    suspend fun vehicleRegister(@Body vehicle: VehiculoBodyRegister): Response<VehiculoResponse>
+    suspend fun vehicleRegister(@Body vehicle: VehiculoModel): Response<VehiculoResponse>
 
 }
