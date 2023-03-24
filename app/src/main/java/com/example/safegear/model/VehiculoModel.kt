@@ -2,7 +2,7 @@ package com.example.safegear.model
 
 import com.google.gson.annotations.SerializedName
 
-data class VehiculoBodyRegister(
+data class VehiculoModel(
 
     @SerializedName("user_id") val user_id: String?,
     @SerializedName("clase_vehiculo") val clase_vehiculo: String?,

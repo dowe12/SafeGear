@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import android.os.Bundle
 import com.example.safegear.databinding.ActivityRegistrarTecnoBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.*
 
 class RegistrarTECNO(): DialogFragment() {
@@ -19,7 +20,7 @@ class RegistrarTECNO(): DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = ActivityRegistrarTecnoBinding.inflate(LayoutInflater.from(context))
 
-        val builder = AlertDialog.Builder(requireActivity())
+        val builder = MaterialAlertDialogBuilder(requireActivity())
         builder.setView(binding.root)
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)

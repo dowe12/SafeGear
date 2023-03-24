@@ -227,18 +227,37 @@
             </TableRow>
 
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Soat"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="23sp"
+                tools:text="Soat" />
+
+
+
             <TableRow>
 
-                <TextView
+                <EditText
+                    android:id="@+id/edt_FechaInicio_RegistrarSOAT"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Soat"
-                    android:textColor="#000000"
-                    android:textSize="23sp"
-                    tools:text="Soat" />
+                    android:background="@drawable/edittext_custom"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:ems="10"
+
+                    android:focusable="false"
+                    android:hint="Fecha Inicio"
+                    android:inputType="none" />
+
 
                 <Button
                     android:id="@+id/btn_registrar_soat"
