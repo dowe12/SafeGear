@@ -37,6 +37,7 @@
             android:textAlignment="center"/>
 
         <EditText
+            android:id="@+id/edt_editar_usuario_nombres"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -50,6 +51,7 @@
             android:textSize="15sp" />
 
         <EditText
+            android:id="@+id/edt_editar_usuario_apellidos"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -63,6 +65,7 @@
             android:textSize="15sp" />
 
         <EditText
+            android:id="@+id/edt_editar_usuario_numero_identificacion"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -76,6 +79,7 @@
             android:textSize="15sp" />
 
         <EditText
+            android:id="@+id/edt_editar_usuario_numero_telefono"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -89,6 +93,7 @@
             android:textSize="15sp" />
 
         <EditText
+            android:id="@+id/edt_editar_usuario_correo"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -102,6 +107,7 @@
             android:textSize="15sp" />
 
         <EditText
+            android:id="@+id/edt_editar_usuario_contrasenia"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -115,6 +121,7 @@
             android:textSize="15sp" />
 
         <EditText
+            android:id="@+id/edt_editar_usuario_confirmar_contrasenia"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -137,6 +144,7 @@
             android:layout_marginBottom="25dp">
 
             <Button
+                android:id="@+id/btn_editar_usuario"
                 android:layout_width="145dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -148,6 +156,7 @@
                 android:theme="@style/BotonTheme"
                 android:onClick="onClick"/>
             <Button
+                android:id="@+id/btn_cancelar_editar_usuario"
                 android:layout_width="145dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"

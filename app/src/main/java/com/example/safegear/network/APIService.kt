@@ -16,4 +16,7 @@ interface APIService {
     @POST("vehiculo")
     suspend fun vehicleRegister(@Body vehicle: VehiculoBodyRegister): Response<VehiculoResponse>
 
+    @POST("vehiculo/update")
+    suspend fun vehicleEdit(@Body vehicle: VehicleBodyEdit): Response<VehiculoResponse>
+
 }

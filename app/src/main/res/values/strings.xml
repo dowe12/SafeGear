@@ -2,5 +2,6 @@
     <string name="app_name">SafeGear</string>
     <string name="name">Name</string>
     <string name="marca">marca</string>
-    <string name="url_base">http://172.21.1.145/BackendSafeGear/public/</string>
+    <!-- <string name="url_base">http://172.21.1.145/projecto_grupo/BackendSafeGear/public/api/</string> -->
+    <string name="url_base">http://192.168.0.31/BackendSafeGear/public/api/</string>
 </resources>
