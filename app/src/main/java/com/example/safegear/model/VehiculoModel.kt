@@ -3,7 +3,8 @@ package com.example.safegear.model
 import com.google.gson.annotations.SerializedName
 
 data class VehiculoModel(
-
+    @SerializedName("status") val status: String?,
+    @SerializedName("vehicle_id") val vehicle_id: String?,
     @SerializedName("user_id") val user_id: String?,
     @SerializedName("clase_vehiculo") val clase_vehiculo: String?,
     @SerializedName("combustible") val combustible: String?,

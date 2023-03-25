@@ -27,6 +27,7 @@ class Login : AppCompatActivity() {
             var correo = binding.edtLoginCorreo.text.toString()
             var contrasenia = binding.edtLoginContrasenia.text.toString()
             val user = UserResponse(correo, contrasenia)
+            Log.e("User",""+user.toString())
             postSignIn(user)
         }
 
@@ -37,17 +38,6 @@ class Login : AppCompatActivity() {
     }
 
     private fun postSignIn(user: UserResponse) {
-
-        val tvGoRegistrarUsuario = findViewById<TextView>(R.id.tv_registrar_usuario)
-        tvGoRegistrarUsuario.setOnClickListener{
-            goRegistarUsuario()
-        }
-
-        val btnGoHomeUsuario = findViewById<TextView>(R.id.btn_login_iniciar_sesion)
-        btnGoHomeUsuario.setOnClickListener{
-            goHomeUsuario()
-        }
-
         CoroutineScope(Dispatchers.IO).launch {
             val call =
                 getRetrofit().create(APIService::class.java).signIn(user)
@@ -100,15 +90,5 @@ class Login : AppCompatActivity() {
             .baseUrl(getString(R.string.url_base))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    }
-
-    private fun goRegistarUsuario(){
-        val i= Intent(this,RegistroUsuario::class.java)
-        startActivity(i)
-    }
-
-    private fun goHomeUsuario(){
-        val i= Intent(this,HomeUsuario::class.java)
-        startActivity(i)
     }
 }
