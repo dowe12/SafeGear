@@ -1,5 +1,6 @@
 package com.example.safegear
 
+import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.safegear.databinding.ActivityEditarVehiculoBinding
 import android.os.Bundle
@@ -13,8 +14,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 
 class EditarVehiculo : AppCompatActivity() {
+
+
+    val calendar = Calendar.getInstance()
+    val year = calendar.get(Calendar.YEAR)
+    val month = calendar.get(Calendar.MONTH)
+    val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+
     lateinit var binding: ActivityEditarVehiculoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,17 +35,60 @@ class EditarVehiculo : AppCompatActivity() {
             editVehicle()
         }
 
-        binding.btnEditarSOATEditarVehiculo.setOnClickListener {
-            EditarSOAT(
-            ).show(supportFragmentManager, "dialog")
+        binding.edtFechaInicioEditarTECNO.setOnClickListener {
+            SelectDateSOAT_ini()
         }
-
-        binding.btnEditarTECNOEditarVehiculo.setOnClickListener {
-            EditarTECNO(
-            ).show(supportFragmentManager, "dialog")
+        binding.edtFechaFinEditarSOAT.setOnClickListener{
+            SelectDateSOAT_fin()
+        }
+        binding.edtFechaInicioEditarTECNO.setOnClickListener{
+            SelectDateTECNO_ini()
+        }
+        binding.edtFechaFinEditarTECNO.setOnClickListener{
+            SelectDateTECNO_fin()
         }
     }
+    private fun SelectDateSOAT_ini(){
 
+        val datePickerDialogINICIO = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            val selectedDateINI = "$dayOfMonth/${month + 1}/$year"
+            binding.edtFechaInicioEditarSOAT.setText(selectedDateINI)
+        }, year, month, day)
+        datePickerDialogINICIO.show()
+        return
+    }
+
+    private fun SelectDateSOAT_fin() {
+        val datePickerDialogFIN = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            val selectedDateFIN = "$dayOfMonth/${month + 1}/$year"
+            binding.edtFechaFinEditarSOAT.setText(selectedDateFIN)
+        }, year, month, day)
+        datePickerDialogFIN.show()
+        return
+    }
+
+    private fun SelectDateTECNO_ini() {
+        val datePickerDialogINICIO = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            val selectedDateINI = "$dayOfMonth/${month + 1}/$year"
+            binding.edtFechaInicioEditarTECNO.setText(selectedDateINI)
+        }, year, month, day)
+
+        datePickerDialogINICIO.show()
+
+        return
+    }
+
+    private fun SelectDateTECNO_fin(){
+
+        val datePickerDialogFIN = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            val selectedDateFIN = "$dayOfMonth/${month + 1}/$year"
+            binding.edtFechaFinEditarTECNO.setText(selectedDateFIN)
+        }, year, month, day)
+
+        datePickerDialogFIN.show()
+
+        return
+    }
     private fun editVehicle() {
         val bundle = intent.extras
         val user_id = SharedApp.prefs.id
@@ -46,10 +99,10 @@ class EditarVehiculo : AppCompatActivity() {
         val color = binding.edtColorVehiculoEditarVehiculo.text.toString()
         val combustible = binding.spnCombustibleEditarVehiculo.selectedItem.toString()
         val cilindraje = binding.edtCilindrajeEditarVehiculo.text.toString()
-        val inicioSOAT = bundle?.getString("fechainicio_RegSOAT").toString()
-        val finSOAT = bundle?.getString("fechafin_RegSOAT").toString()
-        val inicioTecno = bundle?.getString("fechainicio_RegTECNO").toString()
-        val finTecno = bundle?.getString("fechafin_RegTECNO").toString()
+        val inicioSOAT = binding.edtFechaInicioEditarSOAT.text.toString()
+        val finSOAT = binding.edtFechaFinEditarSOAT.text.toString()
+        val inicioTecno = binding.edtFechaInicioEditarTECNO.text.toString()
+        val finTecno = binding.edtFechaFinEditarTECNO.text.toString()
 
         if (//placa.isEmpty() ||
             marca.isEmpty() ||
@@ -125,3 +178,5 @@ class EditarVehiculo : AppCompatActivity() {
 
 
 }
+
+

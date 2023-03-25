@@ -1,5 +1,6 @@
 package com.example.safegear
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -13,8 +14,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 
 class RegistroVehiculo : AppCompatActivity() {
+
+    val calendar = Calendar.getInstance()
+    val year = calendar.get(Calendar.YEAR)
+    val month = calendar.get(Calendar.MONTH)
+    val day = calendar.get(Calendar.DAY_OF_MONTH)
+
 
     lateinit var binding: ActivityRegistroVehiculoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,19 +34,65 @@ class RegistroVehiculo : AppCompatActivity() {
             registerVehicle()
         }
 
-        binding.btnRegistrarSoat.setOnClickListener {
-            RegistrarSOAT(
-            ).show(supportFragmentManager, "dialog")
+        binding.edtFechaInicioRegistrarSOAT.setOnClickListener{
+            SelectDateSOAT_ini()
         }
-
-        binding.btnRegistrarTecnomecanica.setOnClickListener {
-            RegistrarTECNO(
-            ).show(supportFragmentManager, "dialog")
+        binding.edtFechaFinRegistrarSOAT.setOnClickListener{
+            SelectDateSOAT_fin()
+        }
+        binding.edtFechaInicioRegistrarTECNO.setOnClickListener{
+            SelectDateTECNO_ini()
+        }
+        binding.edtFechaFinRegistrarTECNO.setOnClickListener{
+            SelectDateTECNO_fin()
         }
 
     }
 
-    private fun registerVehicle(){
+    private fun SelectDateSOAT_ini(){
+
+        val datePickerDialogINICIO = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            val selectedDateINI = "$dayOfMonth/${month + 1}/$year"
+            binding.edtFechaInicioRegistrarSOAT.setText(selectedDateINI)
+        }, year, month, day)
+        datePickerDialogINICIO.show()
+        return
+    }
+
+    private fun SelectDateSOAT_fin() {
+        val datePickerDialogFIN = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+                val selectedDateFIN = "$dayOfMonth/${month + 1}/$year"
+                binding.edtFechaFinRegistrarSOAT.setText(selectedDateFIN)
+            }, year, month, day)
+        datePickerDialogFIN.show()
+    return
+    }
+
+    private fun SelectDateTECNO_ini() {
+        val datePickerDialogINICIO = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            val selectedDateINI = "$dayOfMonth/${month + 1}/$year"
+            binding.edtFechaInicioRegistrarTECNO.setText(selectedDateINI)
+        }, year, month, day)
+
+        datePickerDialogINICIO.show()
+
+        return
+    }
+
+    private fun SelectDateTECNO_fin(){
+
+        val datePickerDialogFIN = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
+            val selectedDateFIN = "$dayOfMonth/${month + 1}/$year"
+            binding.edtFechaFinRegistrarTECNO.setText(selectedDateFIN)
+        }, year, month, day)
+
+        datePickerDialogFIN.show()
+
+        return
+    }
+
+
+    public fun registerVehicle(){
         val bundle = intent.extras
         val user_id      = SharedApp.prefs.id
         val placa        = binding.edtRegistrarPlaca.text.toString()
@@ -48,10 +102,10 @@ class RegistroVehiculo : AppCompatActivity() {
         val color        = binding.edtRegistrarColor.text.toString()
         val combustible  = binding.spinnerCombustible.selectedItem.toString()
         val cilindraje   = binding.edtRegistrarCilindraje.text.toString()
-        val inicioSOAT   = bundle?.getString("fechainicio_RegSOAT").toString()
-        val finSOAT      = bundle?.getString("fechafin_RegSOAT").toString()
-        val inicioTecno  = bundle?.getString("fechainicio_RegTECNO").toString()
-        val finTecno     = bundle?.getString("fechafin_RegTECNO").toString()
+        val inicioSOAT   = binding.edtFechaInicioRegistrarSOAT.text.toString()
+        val finSOAT      = binding.edtFechaFinRegistrarSOAT.text.toString()
+        val inicioTecno  = binding.edtFechaInicioRegistrarTECNO.text.toString()
+        val finTecno     = binding.edtFechaFinRegistrarTECNO.text.toString()
 
         if (placa.isEmpty()       ||
             marca.isEmpty()       ||
