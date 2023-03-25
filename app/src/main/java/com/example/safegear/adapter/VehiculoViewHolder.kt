@@ -8,15 +8,15 @@ import com.example.safegear.databinding.ItemVehiculoBinding
 import com.example.safegear.model.VehiculoModel
 import java.util.*
 
-class VehiculoViewHolder (view: View): RecyclerView.ViewHolder(view){
-        private val binding = ItemVehiculoBinding.bind(view)
+class VehiculoViewHolder(view:View):RecyclerView.ViewHolder(view) {
+    private val binding = ItemVehiculoBinding.bind(view)
 
-        fun render(vehiculoModel : VehiculoModel){
-            binding.tvPlacaListVehiculo.text = vehiculoModel.placa
+    fun render(vehiculoModel : VehiculoModel){
+        binding.tvPlacaListVehiculo.text = vehiculoModel.placa
 
-            binding.imvVerVehiculo.setOnClickListener{
-                val intent = Intent(binding.root.context, EditarVehiculo::class.java)
-                binding.root.context.startActivity(intent)
-            }
+        binding.imvVerVehiculo.setOnClickListener{
+            val intent = Intent(itemView.context, EditarVehiculo::class.java)
+            itemView.context.startActivity(intent)
         }
+    }
 }
