@@ -1,5 +1,6 @@
 package com.example.safegear
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,11 @@ class HomeVehiculo : AppCompatActivity() {
         setContentView(R.layout.activity_home_vehiculo)
         binding = ActivityHomeVehiculoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnRegistrarVehiculo.setOnClickListener {
+            val intent = Intent(binding.root.context, RegistroVehiculo::class.java)
+            startActivity(intent)
+        }
 
         val vehiculos = listOf(
             VehiculoModel("y","y","y","y","y","AAA-123","y","y",

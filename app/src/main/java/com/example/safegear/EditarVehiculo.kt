@@ -37,6 +37,10 @@ class EditarVehiculo : AppCompatActivity() {
         binding = ActivityEditarVehiculoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val bundle = intent.extras
+        val placa = bundle?.getString("placa")
+        binding.tvPlacaEditarVehiculo.setText(placa)
+
         binding.btnEditarVehiculo.setOnClickListener {
             editVehicle()
         }
@@ -55,10 +59,10 @@ class EditarVehiculo : AppCompatActivity() {
         }
     }
 
-    private fun getVehicle(id:Int) {
+    private fun getVehicle(Id:Int) {
         CoroutineScope(Dispatchers.IO).launch {
             val call =
-                getRetrofit().create(APIService::class.java).getVehicleById(id)
+                getRetrofit().create(APIService::class.java).getVehicleById(Id)
             val dataVehicle = call.body()
             runOnUiThread {
                 if (dataVehicle?.vehicle_id == null) {
@@ -112,7 +116,7 @@ class EditarVehiculo : AppCompatActivity() {
     private fun editVehicle() {
         val bundle = intent.extras
         val user_id = SharedApp.prefs.id
-        //val placa = binding..text.toString()
+        //val placa = bundle?.getString("placa")
         val marca = binding.edtMarcaVehiculoEditarVehiculo.text.toString()
         val modelo = binding.edtModeloVehiculoEditarVehiculo.text.toString()
         val tipoVehiculo = binding.spnTipoVehiculoEditarVehiculo.selectedItem.toString()

@@ -16,6 +16,7 @@ class VehiculoViewHolder(view:View):RecyclerView.ViewHolder(view) {
 
         binding.imvVerVehiculo.setOnClickListener{
             val intent = Intent(itemView.context, EditarVehiculo::class.java)
+            intent.putExtra("placa",binding.tvPlacaListVehiculo.text.toString())
             itemView.context.startActivity(intent)
         }
     }

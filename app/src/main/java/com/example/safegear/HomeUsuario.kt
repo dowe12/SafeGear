@@ -13,7 +13,7 @@ class HomeUsuario : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnVehiculosHomeU.setOnClickListener {
-            val intent = Intent(binding.root.context, RegistroVehiculo::class.java)
+            val intent = Intent(binding.root.context, HomeVehiculo::class.java)
             startActivity(intent)
         }
     }
