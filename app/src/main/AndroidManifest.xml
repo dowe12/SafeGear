@@ -20,7 +20,7 @@
             android:name=".ui.mechanic.HomeMechanicActivity"
             android:exported="false"/>
         <activity
-            android:name=".HomeVehiculo"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".EditarTECNO"
@@ -38,11 +38,10 @@
             android:name=".EditarVehiculo"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".HomeVehiculo"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
