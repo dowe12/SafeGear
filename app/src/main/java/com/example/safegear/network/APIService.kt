@@ -21,4 +21,6 @@ interface APIService {
     @GET("vehiculo/{idVehicle}")
     suspend fun getVehicleById(@Path("idVehicle") id: Int): Response<VehiculoModel>
 
+    @POST("vehiculo/update")
+    suspend fun vehicleEdit(@Body vehicle: VehicleBodyEdit): Response<VehiculoResponse>
 }

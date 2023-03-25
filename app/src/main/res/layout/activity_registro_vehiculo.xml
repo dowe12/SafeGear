@@ -188,7 +188,7 @@
                     android:layout_width="126dp"
                     android:layout_marginTop="15dp"
                     android:layout_height="31dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:contentDescription="@string/name"
                     android:dropDownWidth="wrap_content"
                     android:entries="@array/TipoCombustible"
@@ -227,54 +227,105 @@
             </TableRow>
 
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Soat"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="17dp"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="23sp"
+                tools:text="Soat" />
+
+
+
             <TableRow>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                <EditText
+                    android:id="@+id/edt_FechaInicio_RegistrarSOAT"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="55dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="20dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Soat"
-                    android:textColor="#000000"
-                    android:textSize="23sp"
-                    tools:text="Soat" />
+                    android:background="@drawable/edittext_custom"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="Fecha Inicio"
+                    android:inputType="none" />
 
-                <Button
-                    android:id="@+id/btn_registrar_soat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                <EditText
+                    android:id="@+id/edt_FechaFin_RegistrarSOAT"
+                    android:layout_width="20dp"
+                    android:textAlignment="center"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:backgroundTint="@color/btn_color2"
-                    android:text="editar"
-                    tools:layout_editor_absoluteX="283dp"
-                    tools:layout_editor_absoluteY="513dp" />
+                    android:layout_marginEnd="14dp"
+                    android:background="@drawable/edittext_custom"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="Fecha Fin"
+                    android:inputType="none" />
+
 
             </TableRow>
+
+            <TextView
+                android:layout_marginTop="30dp"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Tecnomecanica"
+                android:textColor="#000000"
+                android:textSize="23sp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="17dp"
+                tools:text="Tecnomecanica" />
+
             <TableRow>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Tecnomecanica"
-                    android:textColor="#000000"
-                    android:textSize="23sp"
-                    tools:text="Tecnomecanica" />
+                <EditText
+                    android:id="@+id/edt_FechaInicio_RegistrarTECNO"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="55dp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edittext_custom"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="Fecha Inicio"
+                    android:inputType="none" />
 
-                <Button
-                    android:id="@+id/btn_registrar_tecnomecanica"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:backgroundTint="@color/btn_color2"
-                    android:text="editar"
-                    tools:layout_editor_absoluteX="283dp"
-                    tools:layout_editor_absoluteY="513dp" />
+                <EditText
+                    android:id="@+id/edt_FechaFin_RegistrarTECNO"
+                    android:layout_width="20dp"
+                    android:textAlignment="center"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@drawable/edittext_custom"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="Fecha Fin"
+                    android:inputType="none" />
+
 
             </TableRow>
 
