@@ -1,5 +1,6 @@
 package com.example.safegear
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -26,6 +27,12 @@ class HomeVehiculo : AppCompatActivity() {
         setContentView(binding.root)
 
         getVehiclesByUserId(SharedApp.prefs.id.toInt())
+
+        binding.btnRegistrarVehiculo.setOnClickListener {
+            val intent = Intent(binding.root.context, RegistroVehiculo::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun initRecyclerView(vehiculoList:List<VehiculoModel>) {

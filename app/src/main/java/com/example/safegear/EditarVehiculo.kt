@@ -8,12 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.safegear.model.SharedApp
-
-import com.example.safegear.model.UserResponse
-
-import com.example.safegear.model.VehicleBodyEdit
 import com.example.safegear.model.VehiculoModel
-
 import com.example.safegear.network.APIService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -66,10 +61,10 @@ class EditarVehiculo : AppCompatActivity() {
         }
     }
 
-    private fun getVehicle(id:Int) {
+    private fun getVehicle(Id:Int) {
         CoroutineScope(Dispatchers.IO).launch {
             val call =
-                getRetrofit().create(APIService::class.java).getVehicleById(id)
+                getRetrofit().create(APIService::class.java).getVehicleById(Id)
             val dataVehicle = call.body()
             runOnUiThread {
                 if (dataVehicle?.vehicle_id == null) {

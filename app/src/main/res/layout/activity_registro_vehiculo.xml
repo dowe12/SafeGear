@@ -44,7 +44,7 @@
                 <EditText
                     android:id="@+id/edt_registrar_placa"
                     android:layout_width="158dp"
-                    android:layout_height="35dp"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
@@ -53,7 +53,8 @@
                     android:ems="10"
                     android:inputType="text"
                     android:padding="3dip"
-                    android:textColor="#8F8F8F"
+                    android:textColor="#000000"
+                    android:textColorHint="#F4F1F1"
                     tools:text="Placa" />
             </TableRow>
             <TableRow>
@@ -72,7 +73,7 @@
                 <EditText
                     android:id="@+id/edt_registrar_marca"
                     android:layout_width="158dp"
-                    android:layout_height="35dp"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
@@ -81,7 +82,8 @@
                     android:ems="10"
                     android:inputType="text"
                     android:padding="3dip"
-                    android:textColor="#8F8F8F"
+                    android:textColor="#000000"
+                    android:textColorHint="#FFFFFF"
                     tools:text="Marca" />
             </TableRow>
 
@@ -102,7 +104,7 @@
                 <EditText
                     android:id="@+id/edt_registrar_modelo"
                     android:layout_width="158dp"
-                    android:layout_height="35dp"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
@@ -111,7 +113,8 @@
                     android:ems="10"
                     android:inputType="text|number"
                     android:padding="3dip"
-                    android:textColor="#8F8F8F"
+                    android:textColor="#000000"
+                    android:textColorHint="#FFFFFF"
                     tools:text="Modelo" />
             </TableRow>
 
@@ -125,12 +128,13 @@
                     android:textColor="#000000"
                     android:textSize="22sp"
                     android:text="Tipo de vehículo" />
+
                 <Spinner
                     android:id="@+id/spinner_vehiculo"
                     android:layout_width="126dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_height="31dp"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
                     android:contentDescription="@string/name"
                     android:dropDownWidth="wrap_content"
                     android:entries="@array/TipoVehiculo"
@@ -157,7 +161,7 @@
                 <EditText
                     android:id="@+id/edt_registrar_color"
                     android:layout_width="158dp"
-                    android:layout_height="35dp"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
@@ -166,7 +170,8 @@
                     android:ems="10"
                     android:inputType="text"
                     android:padding="3dip"
-                    android:textColor="#8F8F8F"
+                    android:textColor="#000000"
+                    android:textColorHint="#FFFFFF"
                     tools:text="Color" />
             </TableRow>
 
@@ -186,9 +191,9 @@
                 <Spinner
                     android:id="@+id/spinner_Combustible"
                     android:layout_width="126dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_height="31dp"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
                     android:contentDescription="@string/name"
                     android:dropDownWidth="wrap_content"
                     android:entries="@array/TipoCombustible"
@@ -212,7 +217,7 @@
                 <EditText
                     android:id="@+id/edt_registrar_cilindraje"
                     android:layout_width="158dp"
-                    android:layout_height="35dp"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
@@ -222,7 +227,8 @@
                     android:hint="Este campo es obligatorio"
                     android:inputType="number"
                     android:padding="3dip"
-                    android:textColor="#8F8F8F"
+                    android:textColor="#000000"
+                    android:textColorHint="#FFFFFF"
                     tools:text="Cilindraje" />
             </TableRow>
 
@@ -248,9 +254,8 @@
                 <EditText
                     android:id="@+id/edt_FechaInicio_RegistrarSOAT"
                     android:layout_width="20dp"
-                    android:layout_height="35dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="55dp"
-                    android:textAlignment="center"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edittext_custom"
                     android:clickable="true"
@@ -258,13 +263,15 @@
                     android:ems="10"
                     android:focusable="false"
                     android:hint="Fecha Inicio"
-                    android:inputType="none" />
+                    android:inputType="none"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textColorHint="#FFFFFF" />
 
                 <EditText
                     android:id="@+id/edt_FechaFin_RegistrarSOAT"
                     android:layout_width="20dp"
-                    android:textAlignment="center"
-                    android:layout_height="35dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="14dp"
@@ -274,7 +281,10 @@
                     android:ems="10"
                     android:focusable="false"
                     android:hint="Fecha Fin"
-                    android:inputType="none" />
+                    android:inputType="none"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textColorHint="#FFFFFF" />
 
 
             </TableRow>
@@ -298,9 +308,8 @@
                 <EditText
                     android:id="@+id/edt_FechaInicio_RegistrarTECNO"
                     android:layout_width="20dp"
-                    android:layout_height="35dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="55dp"
-                    android:textAlignment="center"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edittext_custom"
                     android:clickable="true"
@@ -308,13 +317,15 @@
                     android:ems="10"
                     android:focusable="false"
                     android:hint="Fecha Inicio"
-                    android:inputType="none" />
+                    android:inputType="none"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textColorHint="#FFFFFF" />
 
                 <EditText
                     android:id="@+id/edt_FechaFin_RegistrarTECNO"
                     android:layout_width="20dp"
-                    android:textAlignment="center"
-                    android:layout_height="35dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="14dp"
@@ -324,7 +335,10 @@
                     android:ems="10"
                     android:focusable="false"
                     android:hint="Fecha Fin"
-                    android:inputType="none" />
+                    android:inputType="none"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textColorHint="#FBFBFB" />
 
 
             </TableRow>
@@ -336,7 +350,7 @@
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="80dp"
-                android:background="@color/btn_color"
+                android:background="@drawable/rounded_button"
                 android:backgroundTint="@color/btn_color2"
                 android:text="Registrar"
                 tools:layout_editor_absoluteX="283dp"

@@ -1,6 +1,7 @@
 package com.example.safegear
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -138,6 +139,8 @@ class RegistroVehiculo : AppCompatActivity() {
                     "success" -> {
                         clearInputs()
                         showDialog("Vehículo registrado con éxito!")
+                        val intent = Intent(binding.root.context, HomeVehiculo::class.java)
+                        startActivity(intent)
                     }
                     "invalid" -> {
                         showErrorDialog(dataVehicle.message.toString())
