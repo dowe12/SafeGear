@@ -47,7 +47,7 @@ class EditarVehiculo : AppCompatActivity() {
             }
         }
 
-        binding.edtFechaInicioEditarTECNO.setOnClickListener {
+        binding.edtFechaInicioEditarSOAT.setOnClickListener {
             SelectDateSOAT_ini()
         }
         binding.edtFechaFinEditarSOAT.setOnClickListener{
@@ -67,11 +67,11 @@ class EditarVehiculo : AppCompatActivity() {
                 getRetrofit().create(APIService::class.java).getVehicleById(Id)
             val dataVehicle = call.body()
             runOnUiThread {
-                if (dataVehicle?.vehicle_id == null) {
+                if (dataVehicle == null) {
                     showErrorDialog("Error al cargar el vehiculo")
                 } else {
-                    var claseVehiculo = 1
-                    var combustible   = 1
+                    var claseVehiculo = 0
+                    var combustible   = 0
                     when(dataVehicle.clase_vehiculo){
                         "Moto" -> {
                             claseVehiculo = 1
@@ -104,9 +104,9 @@ class EditarVehiculo : AppCompatActivity() {
                     binding.tvPlacaEditarVehiculo.text = dataVehicle.placa
                     binding.edtMarcaVehiculoEditarVehiculo.setText(dataVehicle.marca)
                     binding.edtModeloVehiculoEditarVehiculo.setText(dataVehicle.modelo)
-                    binding.spnTipoVehiculoEditarVehiculo.setSelection(claseVehiculo)
+                    binding.spnTipoVehiculoEditarVehiculo.setSelection(claseVehiculo-1)
                     binding.edtColorVehiculoEditarVehiculo.setText(dataVehicle.color)
-                    binding.spnCombustibleEditarVehiculo.setSelection(combustible)
+                    binding.spnCombustibleEditarVehiculo.setSelection(combustible-1)
                     binding.edtCilindrajeEditarVehiculo.setText(dataVehicle.cilindraje)
                     binding.edtFechaInicioEditarSOAT.setText(dataVehicle.fecha_inicio_SOAT)
                     binding.edtFechaFinEditarSOAT.setText(dataVehicle.fecha_fin_SOAT)
@@ -118,45 +118,37 @@ class EditarVehiculo : AppCompatActivity() {
     }
 
     private fun SelectDateSOAT_ini(){
-
         val datePickerDialogINICIO = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
-            val selectedDateINI = "$dayOfMonth/${month + 1}/$year"
+            val selectedDateINI = "$year-${month + 1}-$dayOfMonth"
             binding.edtFechaInicioEditarSOAT.setText(selectedDateINI)
         }, year, month, day)
         datePickerDialogINICIO.show()
-        return
     }
 
     private fun SelectDateSOAT_fin() {
         val datePickerDialogFIN = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
-            val selectedDateFIN = "$dayOfMonth/${month + 1}/$year"
+            val selectedDateFIN = "$year-${month + 1}-$dayOfMonth"
             binding.edtFechaFinEditarSOAT.setText(selectedDateFIN)
         }, year, month, day)
         datePickerDialogFIN.show()
-        return
     }
 
     private fun SelectDateTECNO_ini() {
         val datePickerDialogINICIO = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
-            val selectedDateINI = "$dayOfMonth/${month + 1}/$year"
+            val selectedDateINI = "$year-${month + 1}-$dayOfMonth"
             binding.edtFechaInicioEditarTECNO.setText(selectedDateINI)
         }, year, month, day)
-
         datePickerDialogINICIO.show()
-        return
     }
 
     private fun SelectDateTECNO_fin(){
-
         val datePickerDialogFIN = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
-            val selectedDateFIN = "$dayOfMonth/${month + 1}/$year"
+            val selectedDateFIN = "$year-${month + 1}-$dayOfMonth"
             binding.edtFechaFinEditarTECNO.setText(selectedDateFIN)
         }, year, month, day)
-
         datePickerDialogFIN.show()
-
-        return
     }
+
     private fun editVehicle(vehicleId: Int) {
         val user_id         = SharedApp.prefs.id
         val placa           = binding.tvPlacaEditarVehiculo.text.toString()
@@ -171,8 +163,7 @@ class EditarVehiculo : AppCompatActivity() {
         val inicioTecno     = binding.edtFechaInicioEditarTECNO.text.toString()
         val finTecno        = binding.edtFechaFinEditarTECNO.text.toString()
 
-        if (//placa.isEmpty() ||
-            marca.isEmpty() ||
+        if (marca.isEmpty() ||
             color.isEmpty() ||
             cilindraje.isEmpty() ||
             inicioSOAT.isEmpty() ||
@@ -200,8 +191,7 @@ class EditarVehiculo : AppCompatActivity() {
                 inicioTecno,
                 finTecno
             )
-            val call =
-                getRetrofit().create(APIService::class.java).vehicleUpdate(vehicleId, vehicle)
+            val call = getRetrofit().create(APIService::class.java).vehicleUpdate(vehicleId, vehicle)
             val dataVehicle = call.body()
             runOnUiThread {
                 when (dataVehicle?.status) {
@@ -222,7 +212,6 @@ class EditarVehiculo : AppCompatActivity() {
             }
         }
     }
-
 
     private fun showErrorDialog(msg: String) {
         Toast.makeText(this, "Ha ocurrido un error " + msg, Toast.LENGTH_SHORT).show()

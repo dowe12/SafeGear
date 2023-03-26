@@ -3,6 +3,7 @@ package com.example.safegear.network
 import com.example.safegear.model.*
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -25,4 +26,7 @@ interface APIService {
     suspend fun getVehiclesByUserId(@Path("userId") id: Int): Response<List<VehiculoModel>>
     @POST("vehiculo/update/{vehicleId}")
     suspend fun vehicleUpdate(@Path("vehicleId") id: Int, @Body vehicle: VehiculoModel): Response<VehiculoResponse>
+    @DELETE("vehiculo/{vehicleId}")
+    suspend fun vehicleDelete(@Path("vehicleId") id: Int): Response<VehiculoResponse>
+
 }

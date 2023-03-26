@@ -62,8 +62,7 @@
                     android:inputType="text"
                     android:padding="3dip"
                     android:textColor="#000000"
-                    android:textColorHint="#FFFFFF"
-                    tools:text="Marca" />
+                    android:textColorHint="#FFFFFF" />
             </TableRow>
 
             <TableRow>
@@ -93,8 +92,7 @@
                     android:inputType="text|number"
                     android:padding="3dip"
                     android:textColor="#000000"
-                    android:textColorHint="#FFFFFF"
-                    tools:text="Modelo" />
+                    android:textColorHint="#FFFFFF" />
             </TableRow>
 
             <TableRow>
@@ -150,8 +148,7 @@
                     android:inputType="text"
                     android:padding="3dip"
                     android:textColor="#000000"
-                    android:textColorHint="#FFFFFF"
-                    tools:text="Color" />
+                    android:textColorHint="#FFFFFF" />
             </TableRow>
 
             <TableRow>
@@ -203,12 +200,10 @@
                     android:autofillHints=""
                     android:background="@drawable/input_bordes"
                     android:ems="10"
-                    android:hint="Este campo es obligatorio"
-                    android:inputType="number"
+                    android:inputType="number|text"
                     android:padding="3dip"
                     android:textColor="#000000"
-                    android:textColorHint="#00FFFFFF"
-                    tools:text="Cilindraje" />
+                    android:textColorHint="#00FFFFFF" />
             </TableRow>
 
 
@@ -329,9 +324,10 @@
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="80dp"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="@color/btn_color2"
-                android:text="Registrar"
+                android:text="Actualizar"
                 tools:layout_editor_absoluteX="283dp"
                 tools:layout_editor_absoluteY="513dp" />
 

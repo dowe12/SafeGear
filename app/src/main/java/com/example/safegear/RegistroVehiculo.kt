@@ -60,9 +60,9 @@ class RegistroVehiculo : AppCompatActivity() {
 
     private fun SelectDateSOAT_fin() {
         val datePickerDialogFIN = DatePickerDialog(binding.root.context, { _, year, month, dayOfMonth ->
-                val selectedDateFIN = "$year-${month + 1}-$dayOfMonth"
-                binding.edtFechaFinRegistrarSOAT.setText(selectedDateFIN)
-            }, year, month, day)
+            val selectedDateFIN = "$year-${month + 1}-$dayOfMonth"
+            binding.edtFechaFinRegistrarSOAT.setText(selectedDateFIN)
+        }, year, month, day)
         datePickerDialogFIN.show()
     }
 
@@ -95,7 +95,7 @@ class RegistroVehiculo : AppCompatActivity() {
         val color        = binding.edtRegistrarColor.text.toString()
         val combustible  = binding.spinnerCombustible.selectedItem.toString()
         val cilindraje   = binding.edtRegistrarCilindraje.text.toString()
-        Log.e("FECHA tecno date picker", binding.edtFechaInicioRegistrarTECNO.text.toString())
+        Log.e("FECHA tecno date picker", binding.edtFechaFinRegistrarTECNO.text.toString())
         val inicioSOAT   = binding.edtFechaInicioRegistrarSOAT.text.toString()
         val finSOAT      = binding.edtFechaFinRegistrarSOAT.text.toString()
         val inicioTecno  = binding.edtFechaInicioRegistrarTECNO.text.toString()

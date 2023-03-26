@@ -54,8 +54,7 @@
                     android:inputType="text"
                     android:padding="3dip"
                     android:textColor="#000000"
-                    android:textColorHint="#F4F1F1"
-                    tools:text="Placa" />
+                    android:textColorHint="#F4F1F1" />
             </TableRow>
             <TableRow>
 
@@ -83,8 +82,7 @@
                     android:inputType="text"
                     android:padding="3dip"
                     android:textColor="#000000"
-                    android:textColorHint="#FFFFFF"
-                    tools:text="Marca" />
+                    android:textColorHint="#FFFFFF" />
             </TableRow>
 
             <TableRow>
@@ -114,8 +112,7 @@
                     android:inputType="text|number"
                     android:padding="3dip"
                     android:textColor="#000000"
-                    android:textColorHint="#FFFFFF"
-                    tools:text="Modelo" />
+                    android:textColorHint="#FFFFFF" />
             </TableRow>
 
             <TableRow>
@@ -171,8 +168,7 @@
                     android:inputType="text"
                     android:padding="3dip"
                     android:textColor="#000000"
-                    android:textColorHint="#FFFFFF"
-                    tools:text="Color" />
+                    android:textColorHint="#FFFFFF" />
             </TableRow>
 
             <TableRow>
@@ -224,12 +220,10 @@
                     android:autofillHints=""
                     android:background="@drawable/input_bordes"
                     android:ems="10"
-                    android:hint="Este campo es obligatorio"
                     android:inputType="number"
                     android:padding="3dip"
                     android:textColor="#000000"
-                    android:textColorHint="#FFFFFF"
-                    tools:text="Cilindraje" />
+                    android:textColorHint="#FFFFFF" />
             </TableRow>
 
 
