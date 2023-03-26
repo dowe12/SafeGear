@@ -18,9 +18,11 @@ interface APIService {
     @POST("vehiculo")
     suspend fun vehicleRegister(@Body vehicle: VehiculoModel): Response<VehiculoResponse>
 
-    @GET("vehiculo/{idVehicle}")
-    suspend fun getVehicleById(@Path("idVehicle") id: Int): Response<VehiculoModel>
+    @GET("vehiculo/{vehicleId}")
+    suspend fun getVehicleById(@Path("vehicleId") id: Int): Response<VehiculoModel>
 
-    @POST("vehiculo/update")
-    suspend fun vehicleEdit(@Body vehicle: VehicleBodyEdit): Response<VehiculoResponse>
+    @GET("vehiculos/{userId}")
+    suspend fun getVehiclesByUserId(@Path("userId") id: Int): Response<List<VehiculoModel>>
+    @POST("vehiculo/update/{vehicleId}")
+    suspend fun vehicleUpdate(@Path("vehicleId") id: Int, @Body vehicle: VehiculoModel): Response<VehiculoResponse>
 }

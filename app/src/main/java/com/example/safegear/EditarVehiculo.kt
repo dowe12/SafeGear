@@ -1,6 +1,7 @@
 package com.example.safegear
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.example.safegear.databinding.ActivityEditarVehiculoBinding
 import android.os.Bundle
@@ -11,6 +12,7 @@ import com.example.safegear.model.SharedApp
 import com.example.safegear.model.UserResponse
 
 import com.example.safegear.model.VehicleBodyEdit
+import com.example.safegear.model.VehiculoModel
 
 import com.example.safegear.network.APIService
 import kotlinx.coroutines.CoroutineScope
@@ -36,9 +38,18 @@ class EditarVehiculo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditarVehiculoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val bundle = intent.extras
+        val vehicleId = bundle?.getString("vehicleId")
+
+        if (vehicleId != null) {
+            getVehicle(vehicleId.toInt())
+
+        }
 
         binding.btnEditarVehiculo.setOnClickListener {
-            editVehicle()
+            if (vehicleId != null) {
+                editVehicle(vehicleId.toInt())
+            }
         }
 
         binding.edtFechaInicioEditarTECNO.setOnClickListener {
@@ -63,9 +74,51 @@ class EditarVehiculo : AppCompatActivity() {
             runOnUiThread {
                 if (dataVehicle?.vehicle_id == null) {
                     showErrorDialog("Error al cargar el vehiculo")
+                } else {
+                    var claseVehiculo = 1
+                    var combustible   = 1
+                    when(dataVehicle.clase_vehiculo){
+                        "Moto" -> {
+                            claseVehiculo = 1
+                        }
+                        "Carro" -> {
+                            claseVehiculo = 2
+                        }
+                        "Bus" -> {
+                            claseVehiculo = 3
+                        }
+                        "Motocarro" -> {
+                            claseVehiculo = 4
+                        }
+                        "Cuatrimoto" -> {
+                            claseVehiculo = 5
+                        }
+                    }
+                    when(dataVehicle.combustible){
+                        "Gasolina corriente" -> {
+                            combustible = 1
+                        }
+                        "Gasolina premium" -> {
+                            combustible = 2
+                        }
+                        "Diesel" -> {
+                            combustible = 3
+                        }
+                    }
+
+                    binding.tvPlacaEditarVehiculo.text = dataVehicle.placa
+                    binding.edtMarcaVehiculoEditarVehiculo.setText(dataVehicle.marca)
+                    binding.edtModeloVehiculoEditarVehiculo.setText(dataVehicle.modelo)
+                    binding.spnTipoVehiculoEditarVehiculo.setSelection(claseVehiculo)
+                    binding.edtColorVehiculoEditarVehiculo.setText(dataVehicle.color)
+                    binding.spnCombustibleEditarVehiculo.setSelection(combustible)
+                    binding.edtCilindrajeEditarVehiculo.setText(dataVehicle.cilindraje)
+                    binding.edtFechaInicioEditarSOAT.setText(dataVehicle.fecha_inicio_SOAT)
+                    binding.edtFechaFinEditarSOAT.setText(dataVehicle.fecha_fin_SOAT)
+                    binding.edtFechaInicioEditarTECNO.setText(dataVehicle.fecha_inicio_tecno)
+                    binding.edtFechaFinEditarTECNO.setText(dataVehicle.fecha_fin_tecno)
                 }
             }
-
         }
     }
 
@@ -109,20 +162,19 @@ class EditarVehiculo : AppCompatActivity() {
 
         return
     }
-    private fun editVehicle() {
-        val bundle = intent.extras
-        val user_id = SharedApp.prefs.id
-        //val placa = binding..text.toString()
-        val marca = binding.edtMarcaVehiculoEditarVehiculo.text.toString()
-        val modelo = binding.edtModeloVehiculoEditarVehiculo.text.toString()
-        val tipoVehiculo = binding.spnTipoVehiculoEditarVehiculo.selectedItem.toString()
-        val color = binding.edtColorVehiculoEditarVehiculo.text.toString()
-        val combustible = binding.spnCombustibleEditarVehiculo.selectedItem.toString()
-        val cilindraje = binding.edtCilindrajeEditarVehiculo.text.toString()
-        val inicioSOAT = binding.edtFechaInicioEditarSOAT.text.toString()
-        val finSOAT = binding.edtFechaFinEditarSOAT.text.toString()
-        val inicioTecno = binding.edtFechaInicioEditarTECNO.text.toString()
-        val finTecno = binding.edtFechaFinEditarTECNO.text.toString()
+    private fun editVehicle(vehicleId: Int) {
+        val user_id         = SharedApp.prefs.id
+        val placa           = binding.tvPlacaEditarVehiculo.text.toString()
+        val marca           = binding.edtMarcaVehiculoEditarVehiculo.text.toString()
+        val modelo          = binding.edtModeloVehiculoEditarVehiculo.text.toString()
+        val tipoVehiculo    = binding.spnTipoVehiculoEditarVehiculo.selectedItem.toString()
+        val color           = binding.edtColorVehiculoEditarVehiculo.text.toString()
+        val combustible     = binding.spnCombustibleEditarVehiculo.selectedItem.toString()
+        val cilindraje      = binding.edtCilindrajeEditarVehiculo.text.toString()
+        val inicioSOAT      = binding.edtFechaInicioEditarSOAT.text.toString()
+        val finSOAT         = binding.edtFechaFinEditarSOAT.text.toString()
+        val inicioTecno     = binding.edtFechaInicioEditarTECNO.text.toString()
+        val finTecno        = binding.edtFechaFinEditarTECNO.text.toString()
 
         if (//placa.isEmpty() ||
             marca.isEmpty() ||
@@ -137,11 +189,13 @@ class EditarVehiculo : AppCompatActivity() {
         }
 
         CoroutineScope(Dispatchers.IO).launch {
-            val vehicle = VehicleBodyEdit(
+            val vehicle = VehiculoModel(
+                "",
+                vehicleId.toString(),
                 user_id,
                 tipoVehiculo,
                 combustible,
-                //placa,
+                placa,
                 marca,
                 modelo,
                 color,
@@ -152,13 +206,14 @@ class EditarVehiculo : AppCompatActivity() {
                 finTecno
             )
             val call =
-                getRetrofit().create(APIService::class.java).vehicleEdit(vehicle)
+                getRetrofit().create(APIService::class.java).vehicleUpdate(vehicleId, vehicle)
             val dataVehicle = call.body()
             runOnUiThread {
                 when (dataVehicle?.status) {
                     "success" -> {
-                        clearInputs()
                         showDialog("Vehículo Editado con éxito!")
+                        val intent = Intent(binding.root.context, HomeVehiculo::class.java)
+                        startActivity(intent)
                     }
                     "invalid" -> {
                         showErrorDialog(dataVehicle.message.toString())
@@ -176,14 +231,6 @@ class EditarVehiculo : AppCompatActivity() {
 
     private fun showErrorDialog(msg: String) {
         Toast.makeText(this, "Ha ocurrido un error " + msg, Toast.LENGTH_SHORT).show()
-    }
-
-    private fun clearInputs() {
-        //binding.edtRegistrarPlaca.setText("")
-        binding.edtMarcaVehiculoEditarVehiculo.setText("")
-        binding.edtModeloVehiculoEditarVehiculo.setText("")
-        binding.edtColorVehiculoEditarVehiculo.setText("")
-        binding.edtCilindrajeEditarVehiculo.setText("")
     }
 
     private fun showDialog(msg: String) {
