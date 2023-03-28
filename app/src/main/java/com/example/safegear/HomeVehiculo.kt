@@ -31,6 +31,7 @@ class HomeVehiculo : AppCompatActivity() {
         binding.btnRegistrarVehiculo.setOnClickListener {
             val intent = Intent(binding.root.context, RegistroVehiculo::class.java)
             startActivity(intent)
+            finish()
         }
 
     }
@@ -49,7 +50,7 @@ class HomeVehiculo : AppCompatActivity() {
             runOnUiThread {
                 if (dataVehicles != null) {
                     if (dataVehicles.isEmpty()) {
-                        showErrorDialog("Error al cargar el vehiculo")
+                        showErrorDialog("Agrega un vehículo")
                     }
                     else
                     {

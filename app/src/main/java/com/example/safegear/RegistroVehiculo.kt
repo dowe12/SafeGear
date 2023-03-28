@@ -141,6 +141,7 @@ class RegistroVehiculo : AppCompatActivity() {
                         showDialog("Vehículo registrado con éxito!")
                         val intent = Intent(binding.root.context, HomeVehiculo::class.java)
                         startActivity(intent)
+                        finish()
                     }
                     "invalid" -> {
                         showErrorDialog(dataVehicle.message.toString())
