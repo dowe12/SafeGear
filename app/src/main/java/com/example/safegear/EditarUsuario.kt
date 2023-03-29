@@ -24,7 +24,7 @@ class EditarUsuario : AppCompatActivity() {
         setContentView(binding.root)
         val bundle = intent.extras
         val userId = bundle?.getString("userId")
-        //Log.d("usuario id", userId.toString())
+        Log.d("usuario id", userId.toString())
 
         if (userId != null) {
             getUser(userId.toInt())
@@ -50,16 +50,6 @@ class EditarUsuario : AppCompatActivity() {
                 if (dataUser == null) {
                     showErrorDialog("Error al cargar el usuario")
                 } else {
-                    var rol = 0
-                    when (dataUser.rol_id) {
-                        "Usuario" -> {
-                            rol = 1
-                        }
-                        "Mecánico" -> {
-                            rol = 2
-                        }
-                    }
-
                     binding.edtEditarUsuarioContrasenia.setText(dataUser.contrasenia)
                     Log.d("data user contrasenia",dataUser.contrasenia.toString())
                     binding.edtEditarUsuarioNombres.setText(dataUser.nombre)
@@ -73,21 +63,17 @@ class EditarUsuario : AppCompatActivity() {
     }
 
     private fun editUser(userId: Int) {
-        val rol_id                       = "Usuario"
         val nombre                       = binding.edtEditarUsuarioNombres.text.toString()
         val apellido                     = binding.edtEditarUsuarioApellidos.text.toString()
         val identificacion               = binding.edtEditarUsuarioNumeroIdentificacion.text.toString()
         val telefono                     = binding.edtEditarUsuarioNumeroTelefono.text.toString()
         val correo                       = binding.edtEditarUsuarioCorreo.text.toString()
-        val contrasenia                  = binding.edtEditarUsuarioContrasenia.text.toString()
-        Log.d("contrasenia", contrasenia.toString())
 
         if (nombre.isEmpty() ||
             apellido.isEmpty() ||
             identificacion.isEmpty() ||
             telefono.isEmpty() ||
             correo.isEmpty()
-
         ) {
             return showDialog("Por favor ingrese todos los campos!")
         }
@@ -96,23 +82,15 @@ class EditarUsuario : AppCompatActivity() {
             val user = UsuarioModel(
                 "",
                 userId.toString(),
-                rol_id,
+                "",
                 nombre,
                 apellido,
                 telefono,
                 identificacion,
                 correo,
-                contrasenia
-
+                ""
             )
-            Log.d("usuario id",userId.toString())
-            Log.d("nombre",nombre)
-            Log.d("apellido",apellido)
-            Log.d("telefono",telefono)
-            Log.d("identificacion",identificacion)
-            Log.d("correo",correo)
-            Log.d("contraseña",contrasenia)
-            Log.d("rol",rol_id)
+            Log.d("USUARIO: ", user.toString())
             val call = getRetrofit().create(APIService::class.java).userUpdate(userId, user)
             val dataUser = call.body()
             runOnUiThread {
@@ -123,7 +101,7 @@ class EditarUsuario : AppCompatActivity() {
                         startActivity(intent)
                     }
                     "invalid" -> {
-                        showErrorDialog(dataUser.message.toString())
+                        showErrorDialog("Error en server: "+dataUser.message.toString())
                     }
                     else -> {
                         Log.e("API", "" + call)
@@ -135,34 +113,8 @@ class EditarUsuario : AppCompatActivity() {
         }
     }
 
-    /*private fun showConfirmationMessage(userId: String){
-        CoroutineScope(Dispatchers.IO).launch {
-            val call =
-                getRetrofit().create(APIService::class.java).userDelete(userId.toInt())
-            val dataUser = call.body()
-            binding.root.handler.post{
-                when (dataUser?.status) {
-                    "success" -> {
-                        Toast.makeText(itemView.context, "El usuario ha sido eliminado", Toast.LENGTH_SHORT).show()
-                    }
-                    "invalid" -> {
-                        Toast.makeText(itemView.context, "Error al eliminar", Toast.LENGTH_SHORT).show()
-                    }
-                    else -> {
-                        Log.e("API", "" + call)
-                        Toast.makeText(itemView.context, "Error de servidor", Toast.LENGTH_SHORT).show()
-                    }
-                }
-                val intent = Intent(itemView.context, HomeVehiculo::class.java)
-                itemView.context.startActivity(intent)
-                (context as Activity).finish()
-            }
-        }
-    } */
-
     private fun goCancelarEditar(){
-        val i= Intent(this,HomeUsuario::class.java)
-        startActivity(i)
+        startActivity(Intent(this,HomeUsuario::class.java))
     }
 
     private fun showErrorDialog(msg: String) {
@@ -178,5 +130,4 @@ class EditarUsuario : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
 }
