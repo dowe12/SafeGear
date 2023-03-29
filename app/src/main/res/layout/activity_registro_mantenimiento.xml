@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistroMantenimientoActivity"
+    android:stretchColumns="1">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_titulo_fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Fecha"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_titulo_placa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_placa" />
+
+        <TextView
+            android:id="@+id/tv_titulo_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Titulo"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_titulo_placa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_fecha" />
+
+        <TextView
+            android:id="@+id/tv_titulo_descripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Descripción"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_titulo_placa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_titulo" />
+
+        <TextView
+            android:id="@+id/tv_titulo_precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Precio"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_titulo_placa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_descripcion" />
+
+        <TextView
+            android:id="@+id/tv_titulo_nombre_mecanico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Nombre\nMecánico"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_titulo_placa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_precio" />
+
+        <EditText
+            android:id="@+id/edt_fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="48sp"
+            android:ems="10"
+            android:clickable="true"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:inputType="none"
+            android:background="@drawable/edittext_custom"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_fecha"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/tv_titulo_fecha" />
+
+        <EditText
+            android:id="@+id/edt_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="48sp"
+            android:background="@drawable/edittext_custom"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_titulo"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/tv_titulo_titulo" />
+
+        <EditText
+            android:id="@+id/edt_descripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="48sp"
+            android:background="@drawable/edittext_custom"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_descripcion"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/tv_titulo_descripcion" />
+
+        <EditText
+            android:id="@+id/edt_precio"
+            android:layout_width="wrap_content"
+            android:layout_height="48sp"
+            android:background="@drawable/edittext_custom"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_precio"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/tv_titulo_precio" />
+
+        <EditText
+            android:id="@+id/edt_nombre_mecanico"
+            android:layout_width="wrap_content"
+            android:layout_height="48sp"
+            android:background="@drawable/edittext_custom"
+            android:ems="10"
+            android:inputType="textPersonName|text"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_nombre_mecanico"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/tv_titulo_nombre_mecanico" />
+
+        <TextView
+            android:id="@+id/tv_titulo_mante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Registrar Mantenimiento"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_titulo_placa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Placa:"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_titulo_mante"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_mante" />
+
+        <TextView
+            android:id="@+id/tv_placa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="MXB26E"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_placa"
+            app:layout_constraintStart_toEndOf="@+id/tv_titulo_placa"
+            app:layout_constraintTop_toTopOf="@+id/tv_titulo_placa" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_button_gray"
+            android:text="Foto"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_nombre_mecanico"
+            tools:text="Foto" />
+
+        <Button
+            android:id="@+id/btn_registrar_mantenimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/back_button_gray"
+            android:text="Registrar"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_foto" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
