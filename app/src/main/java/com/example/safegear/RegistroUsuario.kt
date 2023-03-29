@@ -38,13 +38,14 @@ class RegistroUsuario : AppCompatActivity() {
         val email               = binding.etCorreoRegister.text.toString()
         val password            = binding.etContraseniaRegister.text.toString()
         val passwordConfirmated = binding.etConfContraseniaRegister.text.toString()
+        val roll = "Usuario"
 
         if (name.isEmpty() || email.isEmpty() || password.isEmpty() || passwordConfirmated.isEmpty()){
             return showDialog("Por favor ingrese todos los campos!")
         }
         if (password.trim() == passwordConfirmated.trim()){
             CoroutineScope(Dispatchers.IO).launch {
-                val user = UserBodyRegister(name, email, password)
+                val user = UserBodyRegister(name, email, password, roll)
                 val call =
                     getRetrofit().create(APIService::class.java).register(user)
                 val dataUser = call.body()

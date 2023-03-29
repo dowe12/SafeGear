@@ -36,6 +36,8 @@
             android:textSize="18sp"
             android:textAlignment="center"/>
 
+
+
         <EditText
             android:id="@+id/edt_editar_usuario_nombres"
             android:layout_width="match_parent"
@@ -50,7 +52,7 @@
             android:padding="15dp"
             android:textSize="15sp" />
 
-        <EditText
+         <EditText
             android:id="@+id/edt_editar_usuario_apellidos"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -73,12 +75,12 @@
             android:layout_marginRight="25dp"
             android:background="@drawable/edittext_custom"
             android:fontFamily="@font/roboto_light_italic"
-            android:hint="Numero de identificacion"
+            android:hint="Número de identificación"
             android:inputType="text"
             android:padding="15dp"
             android:textSize="15sp" />
 
-        <EditText
+         <EditText
             android:id="@+id/edt_editar_usuario_numero_telefono"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -87,7 +89,7 @@
             android:layout_marginRight="25dp"
             android:background="@drawable/edittext_custom"
             android:fontFamily="@font/roboto_light_italic"
-            android:hint="Numero de telefono"
+            android:hint="Teléfono"
             android:inputType="text"
             android:padding="15dp"
             android:textSize="15sp" />
@@ -101,7 +103,7 @@
             android:layout_marginRight="25dp"
             android:background="@drawable/edittext_custom"
             android:fontFamily="@font/roboto_light_italic"
-            android:hint="Correo Electronico"
+            android:hint="Correo"
             android:inputType="textEmailAddress"
             android:padding="15dp"
             android:textSize="15sp" />
@@ -115,7 +117,22 @@
             android:layout_marginRight="25dp"
             android:background="@drawable/edittext_custom"
             android:fontFamily="@font/roboto_light_italic"
-            android:hint="Contraseña"
+            android:hint="Contrasenia"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textSize="15sp"
+            android:visibility="invisible"/>
+
+        <!-- <EditText
+            android:id="@+id/edt_editar_usuario_contrasenia"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/edittext_custom"
+            android:fontFamily="@font/roboto_light_italic"
+            android:hint="Nueva Contraseña"
             android:inputType="textPassword"
             android:padding="15dp"
             android:textSize="15sp" />
@@ -129,10 +146,10 @@
             android:layout_marginRight="25dp"
             android:background="@drawable/edittext_custom"
             android:fontFamily="@font/roboto_light_italic"
-            android:hint="Confirmar Contraseña"
+            android:hint="Confirmar Nueva Contraseña"
             android:inputType="textPassword"
             android:padding="15dp"
-            android:textSize="15sp" />
+            android:textSize="15sp" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
