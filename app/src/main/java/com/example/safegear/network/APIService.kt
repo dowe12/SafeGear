@@ -29,4 +29,5 @@ interface APIService {
     @DELETE("vehiculo/{vehicleId}")
     suspend fun vehicleDelete(@Path("vehicleId") id: Int): Response<VehiculoResponse>
 
+
 }
