@@ -16,6 +16,15 @@ interface APIService {
     @POST("register")
     suspend fun register(@Body user: UserBodyRegister): Response<LoginResponse>
 
+    @GET("usuario/{userId}")
+    suspend fun getUserById(@Path("userId") id: Int): Response<UsuarioModel>
+
+    @POST("usuario/update/{userId}")
+    suspend fun userUpdate(@Path("userId") id: Int, @Body user : UsuarioModel): Response<UsuarioResponse>
+
+    @DELETE("usuario/{userId}")
+    suspend fun userDelete(@Path("userId") id: Int): Response<UserResponse>
+
     @POST("vehiculo")
     suspend fun vehicleRegister(@Body vehicle: VehiculoModel): Response<VehiculoResponse>
 
