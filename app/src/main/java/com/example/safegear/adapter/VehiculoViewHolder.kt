@@ -30,6 +30,7 @@ class VehiculoViewHolder(view:View):RecyclerView.ViewHolder(view) {
             val intent = Intent(itemView.context, EditarVehiculo::class.java)
             intent.putExtra("vehicleId", vehiculoModel.vehicle_id )
             itemView.context.startActivity(intent)
+            (context as Activity).finish()
         }
 
         binding.imvEliminarVehiculo.setOnClickListener{

@@ -55,9 +55,20 @@
                 android:layout_marginEnd="8dp"
                 android:contentDescription="ver y editar"
                 android:onClick="onClick"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imv_EliminarVehiculo"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@mipmap/ic_ver_foreground" />
+
+            <ImageView
+                android:id="@+id/imv_Mantenimientos"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imv_VerVehiculo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/ic_mantenimiento_foreground" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

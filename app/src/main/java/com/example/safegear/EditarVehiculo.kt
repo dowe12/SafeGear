@@ -199,6 +199,7 @@ class EditarVehiculo : AppCompatActivity() {
                         showDialog("Vehículo Editado con éxito!")
                         val intent = Intent(binding.root.context, HomeVehiculo::class.java)
                         startActivity(intent)
+                        finish()
                     }
                     "invalid" -> {
                         showErrorDialog(dataVehicle.message.toString())
