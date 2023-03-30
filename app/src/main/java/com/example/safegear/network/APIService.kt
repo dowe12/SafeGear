@@ -37,6 +37,8 @@ interface APIService {
     suspend fun vehicleUpdate(@Path("vehicleId") id: Int, @Body vehicle: VehiculoModel): Response<VehiculoResponse>
     @DELETE("vehiculo/{vehicleId}")
     suspend fun vehicleDelete(@Path("vehicleId") id: Int): Response<VehiculoResponse>
-
-
+    @GET("mantenimientos/{vehicleId}")
+    suspend fun getMaintenancesByVehicleId(@Path("vehicleId") id: Int): Response<List<MantenimientoModel>>
+    @DELETE("mantenimiento/{maintenanceId}")
+    suspend fun maintenanceDelete(@Path("maintenanceId") id: Int): Response<MaintenanceResponse>
 }

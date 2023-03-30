@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroMantenimientoActivity"
+    tools:context=".EditarMantenimiento"
     android:stretchColumns="1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -74,70 +74,65 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_titulo_precio" />
 
         <EditText
-            android:id="@+id/edt_fecha"
+            android:id="@+id/edt_editarMantenimiento_fecha"
             android:layout_width="wrap_content"
             android:layout_height="48sp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/edittext_custom"
-            android:clickable="true"
-            android:cursorVisible="false"
             android:ems="10"
+            android:clickable="true"
+            android:layout_marginLeft="10dp"
+            android:cursorVisible="false"
             android:focusable="false"
             android:inputType="none"
+            android:background="@drawable/edittext_custom"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_fecha"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="@+id/tv_titulo_fecha" />
 
         <EditText
-            android:id="@+id/edt_titulo"
+            android:id="@+id/edt_editarMantenimiento_titulo"
             android:layout_width="wrap_content"
             android:layout_height="48sp"
-            android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
+            android:layout_marginLeft="10dp"
             android:inputType="text"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_titulo"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="@+id/tv_titulo_titulo" />
 
         <EditText
-            android:id="@+id/edt_descripcion"
+            android:id="@+id/edt_editarMantenimiento_descripcion"
             android:layout_width="wrap_content"
             android:layout_height="48sp"
-            android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
+            android:layout_marginLeft="10dp"
             android:inputType="text"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_descripcion"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="@+id/tv_titulo_descripcion" />
 
         <EditText
-            android:id="@+id/edt_precio"
+            android:id="@+id/edt_editarMantenimiento_precio"
             android:layout_width="wrap_content"
             android:layout_height="48sp"
-            android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
+            android:layout_marginLeft="10dp"
             android:inputType="numberDecimal"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_precio"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="@+id/tv_titulo_precio" />
 
         <EditText
-            android:id="@+id/edt_nombre_mecanico"
+            android:id="@+id/edt_editarMantenimiento_nombre_mecanico"
             android:layout_width="wrap_content"
             android:layout_height="48sp"
-            android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
+            android:layout_marginLeft="10dp"
             android:inputType="textPersonName|text"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_nombre_mecanico"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="@+id/tv_titulo_nombre_mecanico" />
 
@@ -147,7 +142,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Registrar Mantenimiento"
+            android:text="Editar Mantenimiento"
             android:textColor="#000000"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -180,7 +175,7 @@
             app:layout_constraintTop_toTopOf="@+id/tv_titulo_placa" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_foto"
+            android:id="@+id/btn_editarMantenimiento_foto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -189,11 +184,11 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_nombre_mecanico"
+            app:layout_constraintTop_toBottomOf="@+id/edt_editarMantenimiento_nombre_mecanico"
             tools:text="Foto" />
 
         <Button
-            android:id="@+id/btn_registrar_mantenimiento"
+            android:id="@+id/btn_editarMantenimiento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -203,16 +198,17 @@
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_foto" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_editarMantenimiento_foto"
+            app:layout_constraintVertical_bias="1.0" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.47" />
-
+            app:layout_constraintGuide_begin="165dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
