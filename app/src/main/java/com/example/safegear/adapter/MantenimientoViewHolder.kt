@@ -44,7 +44,7 @@ class MantenimientoViewHolder(view: View): RecyclerView.ViewHolder(view) {
                 dialog.dismiss()
             }
             .setPositiveButton("Si"){dialog, _ ->
-                mantenimientoModel.mantenimiento_id?.let { showConfirmationMessage(it) }
+                mantenimientoModel.maintenance_id?.let { showConfirmationMessage(it) }
                 dialog.dismiss()
             }
             .show()

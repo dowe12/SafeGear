@@ -24,6 +24,11 @@ class HomeMantenimiento : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_mantenimiento)
 
+        val bundle = intent.extras
+        val vehicleId = bundle?.getString("vehicleId")
+        val placaId = bundle?.getString("placaId")
+
+
         binding = ActivityHomeMantenimientoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -31,6 +36,8 @@ class HomeMantenimiento : AppCompatActivity() {
 
         binding.btnRegistrarMantenimiento.setOnClickListener{
             val intent = Intent(binding.root.context, RegistroMantenimientoActivity::class.java)
+            intent.putExtra("vehicleId", vehicleId )
+            intent.putExtra("placaId", placaId )
             startActivity(intent)
             finish()
         }

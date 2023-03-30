@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.safegear.EditarVehiculo
+import com.example.safegear.HomeMantenimiento
 import com.example.safegear.HomeVehiculo
 import com.example.safegear.R
 import com.example.safegear.databinding.ItemVehiculoBinding
@@ -36,6 +37,15 @@ class VehiculoViewHolder(view:View):RecyclerView.ViewHolder(view) {
         binding.imvEliminarVehiculo.setOnClickListener{
             showAlertDialog(vehiculoModel)
         }
+
+        binding.imvMantenimientos.setOnClickListener{
+            val intent = Intent(itemView.context, HomeMantenimiento::class.java)
+            intent.putExtra("vehicleId", vehiculoModel.vehicle_id )
+            intent.putExtra("placaId", vehiculoModel.placa )
+            itemView.context.startActivity(intent)
+            (context as Activity).finish()
+        }
+
     }
 
     private fun showAlertDialog(vehiculoModel: VehiculoModel){

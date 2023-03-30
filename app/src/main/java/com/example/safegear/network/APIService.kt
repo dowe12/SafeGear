@@ -41,4 +41,7 @@ interface APIService {
     suspend fun getMaintenancesByVehicleId(@Path("vehicleId") id: Int): Response<List<MantenimientoModel>>
     @DELETE("mantenimiento/{maintenanceId}")
     suspend fun maintenanceDelete(@Path("maintenanceId") id: Int): Response<MaintenanceResponse>
+
+    @POST("mantenimiento")
+    suspend fun maintenanceRegister(@Body maintenance: MantenimientoModel): Response<MaintenanceResponse>
 }
