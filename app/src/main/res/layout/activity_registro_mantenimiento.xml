@@ -77,13 +77,15 @@
             android:id="@+id/edt_fecha"
             android:layout_width="wrap_content"
             android:layout_height="48sp"
-            android:ems="10"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edittext_custom"
             android:clickable="true"
             android:cursorVisible="false"
+            android:ems="10"
             android:focusable="false"
             android:inputType="none"
-            android:background="@drawable/edittext_custom"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_fecha"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="@+id/tv_titulo_fecha" />
 
@@ -91,10 +93,12 @@
             android:id="@+id/edt_titulo"
             android:layout_width="wrap_content"
             android:layout_height="48sp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
             android:inputType="text"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_titulo"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="@+id/tv_titulo_titulo" />
 
@@ -102,10 +106,12 @@
             android:id="@+id/edt_descripcion"
             android:layout_width="wrap_content"
             android:layout_height="48sp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
             android:inputType="text"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_descripcion"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="@+id/tv_titulo_descripcion" />
 
@@ -113,10 +119,12 @@
             android:id="@+id/edt_precio"
             android:layout_width="wrap_content"
             android:layout_height="48sp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
             android:inputType="numberDecimal"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_precio"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="@+id/tv_titulo_precio" />
 
@@ -124,10 +132,12 @@
             android:id="@+id/edt_nombre_mecanico"
             android:layout_width="wrap_content"
             android:layout_height="48sp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_custom"
             android:ems="10"
             android:inputType="textPersonName|text"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_nombre_mecanico"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="@+id/tv_titulo_nombre_mecanico" />
 
@@ -201,7 +211,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="165dp" />
+            app:layout_constraintGuide_percent="0.47" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
