@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.safegear.EditarMantenimiento
 import com.example.safegear.HomeMantenimiento
 import com.example.safegear.R
 import com.example.safegear.databinding.ItemMantenimientoBinding
@@ -25,10 +26,10 @@ class MantenimientoViewHolder(view: View): RecyclerView.ViewHolder(view) {
     fun render(mantenimientoModel: MantenimientoModel){
         binding.tvTituloMantenimientoListMantenimiento.text = mantenimientoModel.titulo
         binding.imvVerMantenimiento.setOnClickListener{
-            /*val intent = Intent(itemView.context, EditarVehiculo::class.java)
-            intent.putExtra("vehicleId", vehiculoModel.vehicle_id )
+            val intent = Intent(itemView.context, EditarMantenimiento::class.java)
+            intent.putExtra("maintenanceId", mantenimientoModel.maintenance_id)
             itemView.context.startActivity(intent)
-            (context as Activity).finish()*/
+            (context as Activity).finish()
         }
 
         binding.imvEliminarMantenimiento.setOnClickListener{

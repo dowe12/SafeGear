@@ -86,7 +86,8 @@
             android:background="@drawable/edittext_custom"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_fecha"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toTopOf="@+id/tv_titulo_fecha" />
+            app:layout_constraintTop_toTopOf="@+id/tv_titulo_fecha"
+            android:padding="15dp"/>
 
         <EditText
             android:id="@+id/edt_editarMantenimiento_titulo"
@@ -98,7 +99,8 @@
             android:inputType="text"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_titulo"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toTopOf="@+id/tv_titulo_titulo" />
+            app:layout_constraintTop_toTopOf="@+id/tv_titulo_titulo"
+            android:padding="15dp"/>
 
         <EditText
             android:id="@+id/edt_editarMantenimiento_descripcion"
@@ -110,7 +112,8 @@
             android:inputType="text"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_descripcion"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toTopOf="@+id/tv_titulo_descripcion" />
+            app:layout_constraintTop_toTopOf="@+id/tv_titulo_descripcion"
+            android:padding="15dp"/>
 
         <EditText
             android:id="@+id/edt_editarMantenimiento_precio"
@@ -122,7 +125,8 @@
             android:inputType="numberDecimal"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_precio"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toTopOf="@+id/tv_titulo_precio" />
+            app:layout_constraintTop_toTopOf="@+id/tv_titulo_precio"
+            android:padding="15dp"/>
 
         <EditText
             android:id="@+id/edt_editarMantenimiento_nombre_mecanico"
@@ -134,7 +138,8 @@
             android:inputType="textPersonName|text"
             app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_nombre_mecanico"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toTopOf="@+id/tv_titulo_nombre_mecanico" />
+            app:layout_constraintTop_toTopOf="@+id/tv_titulo_nombre_mecanico"
+            android:padding="15dp"/>
 
         <TextView
             android:id="@+id/tv_titulo_mante"
@@ -194,7 +199,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/back_button_gray"
-            android:text="Registrar"
+            android:text="Editar"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

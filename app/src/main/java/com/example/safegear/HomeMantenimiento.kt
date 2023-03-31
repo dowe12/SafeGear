@@ -15,6 +15,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import android.util.Log
+
+
 
 class HomeMantenimiento : AppCompatActivity() {
     private lateinit var binding: ActivityHomeMantenimientoBinding
@@ -22,17 +25,19 @@ class HomeMantenimiento : AppCompatActivity() {
     private lateinit var mantenimientoList: List<MantenimientoModel>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityHomeMantenimientoBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_home_mantenimiento)
 
         val bundle = intent.extras
         val vehicleId = bundle?.getString("vehicleId")
         val placaId = bundle?.getString("placaId")
+        Log.d("vehiculo id",vehicleId.toString())
 
-
-        binding = ActivityHomeMantenimientoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        getMaintenancebyVehicleId(SharedApp.prefs.id.toInt())
+        //getMaintenancebyVehicleId(SharedApp.prefs.id.toInt())
+        if (vehicleId != null) {
+            getMaintenancebyVehicleId(vehicleId.toInt())
+        }
 
         binding.btnRegistrarMantenimiento.setOnClickListener{
             val intent = Intent(binding.root.context, RegistroMantenimientoActivity::class.java)

@@ -28,6 +28,11 @@ class HomeUsuario : AppCompatActivity() {
             val intent = Intent(binding.root.context, HomeVehiculo::class.java)
             startActivity(intent)
         }
+
+        binding.btnLogoutHomeU.setOnClickListener{
+            val intent = Intent(binding.root.context,Login::class.java)
+            startActivity(intent)
+        }
     }
 
     fun getRetrofit(): Retrofit {

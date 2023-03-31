@@ -29,7 +29,7 @@ class VehiculoViewHolder(view:View):RecyclerView.ViewHolder(view) {
         binding.tvPlacaListVehiculo.text = vehiculoModel.placa
         binding.imvVerVehiculo.setOnClickListener{
             val intent = Intent(itemView.context, EditarVehiculo::class.java)
-            intent.putExtra("vehicleId", vehiculoModel.vehicle_id )
+            intent.putExtra("vehicleId", vehiculoModel.vehicle_id)
             itemView.context.startActivity(intent)
             (context as Activity).finish()
         }
@@ -40,8 +40,8 @@ class VehiculoViewHolder(view:View):RecyclerView.ViewHolder(view) {
 
         binding.imvMantenimientos.setOnClickListener{
             val intent = Intent(itemView.context, HomeMantenimiento::class.java)
-            intent.putExtra("vehicleId", vehiculoModel.vehicle_id )
-            intent.putExtra("placaId", vehiculoModel.placa )
+            intent.putExtra("vehicleId", vehiculoModel.vehicle_id)
+            intent.putExtra("placaId", vehiculoModel.placa)
             itemView.context.startActivity(intent)
             (context as Activity).finish()
         }
